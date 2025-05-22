@@ -41,7 +41,8 @@ main, section, #projects, #achievements, #contact, footer {
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
-  height: 100%; 
+  height: 100%;
+  font-family: 'Colonna MT', serif;  /* Added Colonna MT font */
 }
 
 .navbar-brand img {

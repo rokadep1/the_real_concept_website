@@ -3,28 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Real Concept - Interior Design</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Your Interior Design Company</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container d-flex align-items-center">
-      <a class="navbar-brand d-flex align-items-center" href="#home">
-        <img src="images/logo.jpg" alt="Logo" height="40" class="me-2">
-        <span>The Real Concept</span>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.jpg" alt="Logo" />
+        Your Company Name
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -32,97 +31,92 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section" id="home">
-    <div class="container text-center text-white">
-      <h1>Welcome to The Real Concept</h1>
-      <p>We Care For Your Dreams</p>
+  <section class="hero-section">
+    <div class="container">
+      <h1>We Design Your Dreams</h1>
+      <p>Stylish Interiors | Affordable Luxury | Customized Solutions</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We are a passionate interior design team delivering stunning home and office makeovers that suit your style and budget.</p>
+
+      <div class="about-subsection">
+        <h3>Our Mission</h3>
+        <p>To deliver high-quality, innovative design solutions that reflect your personality.</p>
+      </div>
+
+      <div class="about-subsection">
+        <h3>Our Vision</h3>
+        <p>To be a leading interior design brand offering creative and sustainable spaces.</p>
+      </div>
+
+      <div class="about-subsection">
+        <h3>Our Values</h3>
+        <p>Creativity, transparency, customer satisfaction, and timely delivery.</p>
+      </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-5">
+  <section id="projects">
     <div class="container">
-      <h2 class="text-center mb-4">Our Projects</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <h5>Project 1</h5>
-          <img src="projects/project1/image1.jpg" class="img-fluid mb-2" alt="Project 1 Image">
-          <video controls width="100%">
-            <source src="projects/project1/video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <h2>Our Projects</h2>
+      <div id="projects-container">
+        <div class="project">
+          <img src="projects/project1/image1.jpg" alt="Living Room">
+          <h4>Modern Living Room</h4>
         </div>
-        <div class="col-md-4">
-          <h5>Project 2</h5>
-          <img src="projects/project2/image1.jpg" class="img-fluid mb-2" alt="Project 2 Image">
-          <video controls width="100%">
+        <div class="project">
+          <video controls>
             <source src="projects/project2/video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            Your browser does not support video.
           </video>
+          <h4>3BHK Walkthrough</h4>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Achievements Section -->
-  <section id="achievements" class="py-5 bg-light">
+  <section id="achievements">
     <div class="container">
-      <h2 class="text-center mb-4">Achievements</h2>
+      <h2>Achievements</h2>
       <div class="row">
-        <div class="col-md-6">
-          <img src="achievements/award1.jpg" class="img-fluid" alt="Award 1">
-          <p>Awarded Best Interior Designer 2024</p>
+        <div class="col-md-4">
+          <img src="achievements/award1.jpg" alt="Award 1" class="img-fluid" />
+          <p>Best Designer Award 2023</p>
         </div>
-        <div class="col-md-6">
-          <img src="achievements/award2.jpg" class="img-fluid" alt="Award 2">
-          <p>Featured in Top 10 Luxury Designers by Design Magazine</p>
+        <div class="col-md-4">
+          <img src="achievements/award2.jpg" alt="Award 2" class="img-fluid" />
+          <p>Top 10 Designers - India Today</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Us -->
-  <section id="about" class="py-5">
+  <!-- Contact Section -->
+  <section id="contact">
     <div class="container">
-      <h2 class="text-center mb-4">About Us</h2>
-      <p class="text-center">We are passionate about transforming homes and commercial spaces into stunning environments. With years of experience in interior design, we bring your dream spaces to life with creativity and professionalism.</p>
-      <div class="mt-5">
-        <h4>Our Mission</h4>
-        <p>To deliver exceptional and innovative interior designs that exceed client expectations while maintaining the highest standards of quality and integrity.</p>
-
-        <h4>Our Vision</h4>
-        <p>To be recognized as a leading interior design firm known for transforming spaces that inspire and elevate everyday living.</p>
-
-        <h4>Our Values</h4>
-        <ul>
-          <li>Creativity and Innovation</li>
-          <li>Client-Centric Approach</li>
-          <li>Commitment to Quality</li>
-          <li>Professional Integrity</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Contact Us</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <p>Email: <a href="mailto:info@therealconcept.com">info@therealconcept.com</a></p>
-          <p>Phone: +91-9876543210</p>
-          <p>Location: Pune, Maharashtra, India</p>
-        </div>
+      <h2>Contact Us</h2>
+      <div class="text-left">
+        <p><strong>Phone:</strong> +91-9876543210</p>
+        <p><strong>Email:</strong> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+        <p><strong>Location:</strong> Mumbai, Maharashtra</p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="text-center py-3 bg-dark text-white">
-    © 2025 The Real Concept. All rights reserved.
+  <footer>
+    <div class="container">
+      &copy; 2025 Your Interior Design Company. All rights reserved.
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

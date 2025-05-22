@@ -28,8 +28,11 @@ main, section, #projects, #achievements, #contact, footer {
 /* Navbar */
 .navbar {
   background-color: #1a1a1a;
-  padding: 1rem 0;
+  padding: 0.5rem 1rem;  /* reduce padding to better fit taller logo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 60px;          /* set fixed height for the navbar */
+  display: flex;
+  align-items: center;   /* vertical center all navbar content */
 }
 
 .navbar-brand {
@@ -38,11 +41,13 @@ main, section, #projects, #achievements, #contact, footer {
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
+  height: 100%; 
 }
 
 .navbar-brand img {
-  height: 40px;
-  margin-right: 10px;
+  height: 50px;          /* increased from 40px */
+  margin-right: 12px;
+  object-fit: contain;
 }
 
 .nav-link {

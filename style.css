@@ -5,12 +5,14 @@
   box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
   background-color: #fefefe;
+  padding-top: 70px; /* Offset for fixed navbar */
 }
 
 /* Navbar */
@@ -86,25 +88,13 @@ section h2 {
   padding-bottom: 5px;
 }
 
-/* About, Services, Contact Section */
+/* Section spacing */
 section {
   padding: 60px 0;
 }
 
 .bg-light {
   background-color: #f9f9f9 !important;
-}
-
-/* Services List */
-#services ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-#services li {
-  padding: 10px 0;
-  font-size: 1.1rem;
-  border-bottom: 1px solid #ddd;
 }
 
 /* Projects Section */
@@ -119,7 +109,7 @@ section {
   border: none;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   transition: transform 0.3s ease;
 }
@@ -140,6 +130,12 @@ section {
 .project video {
   width: 100%;
   display: block;
+}
+
+/* Achievements Section */
+#achievements img {
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 /* Contact Section */

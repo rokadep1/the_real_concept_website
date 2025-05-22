@@ -13,19 +13,42 @@ body {
   scroll-behavior: smooth;
   background-color: #fefefe;
   padding-top: 70px; /* Offset for fixed navbar */
+  background-image: url('images/background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Add white translucent background to content for readability */
+main, section, #projects, #achievements, #contact, footer {
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 /* Navbar */
 .navbar {
   background-color: #1a1a1a;
-  padding: 1rem 0;
+  padding: 0.5rem 1rem;  /* reduce padding to better fit taller logo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 60px;          /* set fixed height for the navbar */
+  display: flex;
+  align-items: center;   /* vertical center all navbar content */
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
+  height: 100%;
+  font-family: 'Colonna MT', serif;  /* Added Colonna MT font */
+}
+
+.navbar-brand img {
+  height: 50px;          /* increased from 40px */
+  margin-right: 12px;
+  object-fit: contain;
 }
 
 .nav-link {
@@ -51,16 +74,17 @@ body {
   text-align: center;
 }
 
-.hero-section::after {
+/* Removed the overlay */
+/* .hero-section::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
+} */
 
 .hero-section .container {
   position: relative;
@@ -139,6 +163,10 @@ section {
 }
 
 /* Contact Section */
+#contact .text-left {
+  text-align: left !important;
+}
+
 #contact p {
   font-size: 1.1rem;
 }
@@ -150,6 +178,22 @@ section {
 
 #contact a:hover {
   text-decoration: underline;
+}
+
+/* About Us Subsections */
+.about-subsection {
+  margin-top: 2rem;
+}
+
+.about-subsection h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.about-subsection p {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Footer */

@@ -42,7 +42,7 @@ body {
 /* Hero Section */
 .hero-section {
   height: 100vh;
-  background: url('assets/hero.jpg') no-repeat center center/cover;
+  background: url('images/hero.jpg') no-repeat center center/cover;
   position: relative;
   display: flex;
   align-items: center;

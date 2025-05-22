@@ -2,28 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Real Concept - Interior Design</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+<body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">The Real Concept</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navContent" aria-controls="navContent"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#home">The Real Concept</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navContent">
-        <ul class="navbar-nav ms-auto">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -31,55 +29,83 @@
   </nav>
 
   <!-- Hero Section -->
-  <header id="home" class="hero-section d-flex align-items-center">
+  <section class="hero-section" id="home">
     <div class="container text-center text-white">
-      <h1 class="display-4">Welcome to The Real Concept</h1>
-      <p class="lead">Transforming spaces with elegant interior design</p>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>We are The Real Concept, an interior design firm committed to creating beautiful and functional spaces.</p>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="py-5">
-    <div class="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Residential Interior Design</li>
-        <li>Commercial Space Planning</li>
-        <li>Custom Furniture Design</li>
-        <li>Project Consultation</li>
-      </ul>
+      <h1>Welcome to The Real Concept</h1>
+      <p>Transforming spaces into timeless masterpieces</p>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-5 bg-light">
+  <section id="projects" class="py-5">
     <div class="container">
-      <h2>Our Projects</h2>
-      <div id="projects-container" class="mt-4">
-        <!-- Projects will be dynamically loaded here -->
+      <h2 class="text-center mb-4">Our Projects</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Project 1</h5>
+          <img src="projects/project1/image1.jpg" class="img-fluid mb-2" alt="Project 1 Image">
+          <video controls width="100%">
+            <source src="projects/project1/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col-md-4">
+          <h5>Project 2</h5>
+          <img src="projects/project2/image1.jpg" class="img-fluid mb-2" alt="Project 2 Image">
+          <video controls width="100%">
+            <source src="projects/project2/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- Add more projects similarly -->
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-5 bg-light">
     <div class="container">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:therealconcept@example.com">therealconcept@example.com</a></p>
-      <p>Phone: +91-9876543210</p>
+      <h2 class="text-center mb-4">Achievements</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="achievements/award1.jpg" class="img-fluid" alt="Award 1">
+          <p>Awarded Best Interior Designer 2024</p>
+        </div>
+        <div class="col-md-6">
+          <img src="achievements/award2.jpg" class="img-fluid" alt="Award 2">
+          <p>Featured in Top 10 Luxury Designers by Design Magazine</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Bootstrap JS and Custom JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  <!-- About Us -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">About Us</h2>
+      <p class="text-center">We are passionate about transforming homes and commercial spaces into stunning environments. With years of experience in interior design, we bring your dream spaces to life with creativity and professionalism.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <p>Email: <a href="mailto:info@therealconcept.com">info@therealconcept.com</a></p>
+          <p>Phone: +91-9876543210</p>
+          <p>Location: Pune, Maharashtra, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white">
+    © 2025 The Real Concept. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

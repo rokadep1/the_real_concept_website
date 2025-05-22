@@ -23,9 +23,16 @@ body {
 }
 
 .navbar-brand {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
+}
+
+.navbar-brand img {
+  height: 40px;
+  margin-right: 10px;
 }
 
 .nav-link {
@@ -51,16 +58,17 @@ body {
   text-align: center;
 }
 
-.hero-section::after {
+/* Removed the overlay */
+/* .hero-section::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
+} */
 
 .hero-section .container {
   position: relative;
@@ -139,6 +147,10 @@ section {
 }
 
 /* Contact Section */
+#contact .text-left {
+  text-align: left !important;
+}
+
 #contact p {
   font-size: 1.1rem;
 }
@@ -150,6 +162,22 @@ section {
 
 #contact a:hover {
   text-decoration: underline;
+}
+
+/* About Us Subsections */
+.about-subsection {
+  margin-top: 2rem;
+}
+
+.about-subsection h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.about-subsection p {
+  font-size: 1rem;
+  color: #555;
 }
 
 /* Footer */

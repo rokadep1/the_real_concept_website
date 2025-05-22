@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Living Room Renovation",
+    "image": "projects/Project1/img1.jpg",
+    "video": "projects/Project1/video1.mp4"
+  },
+  {
+    "name": "Kitchen Design",
+    "image": "projects/Project2/img2.jpg",
+    "video": "projects/Project2/video2.mp4"
+  }
+]
+# after adding new images in project and achievment folder, just add a code block here with the path

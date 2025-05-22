@@ -1,0 +1,15 @@
+.hero-image {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('images/hero.jpg'); /* Ensure this image exists */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body {
+  scroll-behavior: smooth;
+}
+section {
+  padding-top: 100px;
+}

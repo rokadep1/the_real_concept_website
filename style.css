@@ -21,16 +21,22 @@ body {
 
 main, section, #projects, #achievements, #contact, footer {
   background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 1100px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* Navbar */
 .navbar {
   background-color: #1a1a1a;
   padding: 0.5rem 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
   height: 60px;
   display: flex;
   align-items: center;
+  z-index: 999;
 }
 
 .navbar-brand {
@@ -40,18 +46,21 @@ main, section, #projects, #achievements, #contact, footer {
   font-weight: 700;
   color: #fff;
   font-family: 'Colonna MT', serif;
+  text-decoration: none;
 }
 
 .navbar-brand img {
   height: 50px;
   margin-right: 12px;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 .nav-link {
   color: #ddd !important;
   margin-left: 1rem;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -67,24 +76,202 @@ main, section, #projects, #achievements, #contact, footer {
   justify-content: center;
   color: #fff;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-section .container {
-  z-index: 2;
   position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero-section p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #eee;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
 }
 
 /* Section Heading */
 section h2 {
-  font-size: 2.
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* About Section */
+#about p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.1rem;
+  color: #444;
+  text-align: center;
+}
+
+.about-subsection {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.about-subsection:hover {
+  transform: translateY(-5px);
+}
+
+.about-subsection h3 {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.about-subsection p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Projects Section */
+#projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project {
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.project:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+.project img,
+.project video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project h4 {
+  padding: 15px 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Achievements Section */
+#achievements .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#achievements .col-md-4 {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#achievements .col-md-4:hover {
+  transform: translateY(-6px);
+}
+
+#achievements img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+  max-width: 600px;
+}
+
+#contact h2 {
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#contact .text-left {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+#contact .text-left p {
+  margin-bottom: 12px;
+}
+
+#contact a {
+  color: #1a73e8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #0c47b7;
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #ddd;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  #projects-container,
+  #achievements .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project,
+  #achievements .col-md-4 {
+    width: 90%;
+    max-width: 400px;
+  }
+}

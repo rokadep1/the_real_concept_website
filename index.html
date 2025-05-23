@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Interior Design Company</title>
+  <title>The Real Concept</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -12,9 +15,9 @@
   <!-- Navbar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.jpg" alt="Logo" />
-        The Real Concept
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="images/logo.jpg" alt="Logo" class="me-2" />
+        <span>The Real Concept</span>
       </a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,30 +35,29 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section text-center text-white">
     <div class="container">
-      <h1>We Care For Your Dreams...</h1>
-      <p>Stylish Interiors | Affordable Luxury | Customized Solutions</p>
+      <h1 class="display-4">We Care For Your Dreams...</h1>
+      <p class="lead">Stylish Interiors | Affordable Luxury | Customized Solutions</p>
+      <a href="#contact" class="btn btn-outline-light mt-3">Let's Connect</a>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about">
+  <section id="about" class="py-5">
     <div class="container">
-      <h2>About Us</h2>
-      <p>We are a passionate interior design team delivering stunning home and office makeovers that suit your style and budget.</p>
+      <h2 class="section-title">About Us</h2>
+      <p class="text-muted">We are a passionate interior design team delivering stunning home and office makeovers that suit your style and budget.</p>
 
-      <div class="about-subsection">
+      <div class="about-subsection mt-4">
         <h3>Our Mission</h3>
         <p>To deliver high-quality, innovative design solutions that reflect your personality.</p>
       </div>
-
-      <div class="about-subsection">
+      <div class="about-subsection mt-4">
         <h3>Our Vision</h3>
         <p>To be a leading interior design brand offering creative and sustainable spaces.</p>
       </div>
-
-      <div class="about-subsection">
+      <div class="about-subsection mt-4">
         <h3>Our Values</h3>
         <p>Creativity, transparency, customer satisfaction, and timely delivery.</p>
       </div>
@@ -63,47 +65,63 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section id="projects" class="py-5 bg-light">
     <div class="container">
-      <h2>Our Projects</h2>
-      <div id="projects-container">
-        <div class="project">
-          <img src="projects/project1/image1.jpg" alt="Living Room">
-          <h4>Modern Living Room</h4>
+      <h2 class="section-title">Our Projects</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-6">
+          <div class="card project-card">
+            <img src="projects/project1/image1.jpg" class="card-img-top" alt="Living Room">
+            <div class="card-body">
+              <h5 class="card-title">Modern Living Room</h5>
+            </div>
+          </div>
         </div>
-        <div class="project">
-          <video controls>
-            <source src="projects/project2/video1.mp4" type="video/mp4">
-            Your browser does not support video.
-          </video>
-          <h4>3BHK Walkthrough</h4>
+        <div class="col-md-6">
+          <div class="card project-card">
+            <video class="card-img-top" controls>
+              <source src="projects/project2/video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+              <h5 class="card-title">3BHK Walkthrough</h5>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Achievements Section -->
-  <section id="achievements">
+  <section id="achievements" class="py-5">
     <div class="container">
-      <h2>Achievements</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <img src="achievements/award1.jpg" alt="Award 1" class="img-fluid" />
-          <p>Best Designer Award 2023</p>
+      <h2 class="section-title">Achievements</h2>
+      <div class="row g-4 mt-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 text-center">
+            <img src="achievements/award1.jpg" class="card-img-top" alt="Award 1">
+            <div class="card-body">
+              <p class="card-text">Best Designer Award 2023</p>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4">
-          <img src="achievements/award2.jpg" alt="Award 2" class="img-fluid" />
-          <p>Top 10 Designers - India Today</p>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 text-center">
+            <img src="achievements/award2.jpg" class="card-img-top" alt="Award 2">
+            <div class="card-body">
+              <p class="card-text">Top 10 Designers - India Today</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact">
+  <section id="contact" class="py-5 bg-light">
     <div class="container">
-      <h2>Contact Us</h2>
-      <div class="text-left">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="text-left mt-4">
         <p><strong>Phone:</strong> +91-9876543210</p>
         <p><strong>Email:</strong> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
         <p><strong>Location:</strong> Mumbai, Maharashtra</p>
@@ -112,9 +130,9 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="footer py-4 text-center text-white">
     <div class="container">
-      &copy; 2025 Your Interior Design Company. All rights reserved.
+      &copy; 2025 The Real Concept. All rights reserved.
     </div>
   </footer>
 

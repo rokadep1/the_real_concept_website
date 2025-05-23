@@ -48,6 +48,14 @@ main, section, #projects, #achievements, #contact, footer {
   object-fit: contain;
 }
 
+/* Company Name Image */
+.company-name-img {
+  height: 50px;
+  object-fit: contain;
+  margin-left: 0; /* No gap since logo already has margin-right */
+}
+
+/* Navigation Links */
 .nav-link {
   color: #ddd !important;
   margin-left: 1rem;

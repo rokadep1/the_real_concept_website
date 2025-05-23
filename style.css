@@ -1,26 +1,24 @@
-/* Reset some default styles */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
+  padding-top: 70px;
   background-color: #fefefe;
-  padding-top: 70px; /* Offset for fixed navbar */
   background-image: url('images/background.jpg');
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-/* Add white translucent background to content for readability */
 main, section, #projects, #achievements, #contact, footer {
   background-color: rgba(255, 255, 255, 0.85);
 }
@@ -28,11 +26,11 @@ main, section, #projects, #achievements, #contact, footer {
 /* Navbar */
 .navbar {
   background-color: #1a1a1a;
-  padding: 0.5rem 1rem;  /* reduce padding to better fit taller logo */
+  padding: 0.5rem 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  height: 60px;          /* set fixed height for the navbar */
+  height: 60px;
   display: flex;
-  align-items: center;   /* vertical center all navbar content */
+  align-items: center;
 }
 
 .navbar-brand {
@@ -41,12 +39,11 @@ main, section, #projects, #achievements, #contact, footer {
   font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
-  height: 100%;
-  font-family: 'Colonna MT', serif;  /* Added Colonna MT font */
+  font-family: 'Colonna MT', serif;
 }
 
 .navbar-brand img {
-  height: 50px;          /* increased from 40px */
+  height: 50px;
   margin-right: 12px;
   object-fit: contain;
 }
@@ -55,7 +52,6 @@ main, section, #projects, #achievements, #contact, footer {
   color: #ddd !important;
   margin-left: 1rem;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
@@ -66,29 +62,16 @@ main, section, #projects, #achievements, #contact, footer {
 .hero-section {
   height: 100vh;
   background: url('images/hero.jpg') no-repeat center center/cover;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
 }
 
-/* Removed the overlay */
-/* .hero-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-} */
-
 .hero-section .container {
-  position: relative;
   z-index: 2;
+  position: relative;
 }
 
 .hero-section h1 {
@@ -102,120 +85,6 @@ main, section, #projects, #achievements, #contact, footer {
   color: #eee;
 }
 
-/* Section headings */
+/* Section Heading */
 section h2 {
-  font-size: 2.25rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  border-bottom: 3px solid #d4af37;
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-/* Section spacing */
-section {
-  padding: 60px 0;
-}
-
-.bg-light {
-  background-color: #f9f9f9 !important;
-}
-
-/* Projects Section */
-#projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.project {
-  border: none;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  transition: transform 0.3s ease;
-}
-
-.project:hover {
-  transform: translateY(-5px);
-}
-
-.project h4 {
-  padding: 15px;
-  background-color: #f4f4f4;
-  margin: 0;
-  font-weight: bold;
-  border-bottom: 1px solid #ddd;
-}
-
-.project img,
-.project video {
-  width: 100%;
-  display: block;
-}
-
-/* Achievements Section */
-#achievements img {
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-/* Contact Section */
-#contact .text-left {
-  text-align: left !important;
-}
-
-#contact p {
-  font-size: 1.1rem;
-}
-
-#contact a {
-  color: #d4af37;
-  text-decoration: none;
-}
-
-#contact a:hover {
-  text-decoration: underline;
-}
-
-/* About Us Subsections */
-.about-subsection {
-  margin-top: 2rem;
-}
-
-.about-subsection h3 {
-  font-size: 1.5rem;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-}
-
-.about-subsection p {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Footer */
-footer {
-  background-color: #1a1a1a;
-  color: #ccc;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-
-  .hero-section p {
-    font-size: 1rem;
-  }
-
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-}
+  font-size: 2.

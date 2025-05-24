@@ -102,8 +102,10 @@ main, section, #projects, #achievements, #contact, footer {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-color: #000;
   animation: heroSlideShow 9s infinite;
   animation-timing-function: ease-in-out;
   transition: background-image 1s ease-in-out;

@@ -10,7 +10,6 @@ body {
   color: #333;
   line-height: 1.6;
   scroll-behavior: smooth;
-  padding-top: 70px;
   background-color: #fefefe;
   background-image: url('images/background.jpg');
   background-attachment: fixed;
@@ -31,12 +30,18 @@ main, section, #projects, #achievements, #contact, footer {
 
 /* Navbar */
 .navbar {
-  background-color: #1f2937; /* dark slate */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 0.6rem 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   height: 65px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .navbar-brand {
@@ -44,7 +49,7 @@ main, section, #projects, #achievements, #contact, footer {
   align-items: center;
   font-size: 1.7rem;
   font-weight: 700;
-  color: #f3f4f6; /* light gray */
+  color: #ffffff; /* white for hero overlay */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
 }
@@ -57,7 +62,7 @@ main, section, #projects, #achievements, #contact, footer {
 }
 
 .nav-link {
-  color: #d1d5db !important; /* lighter gray */
+  color: #ffffff !important;
   margin-left: 1.3rem;
   font-weight: 600;
   font-size: 1rem;
@@ -66,44 +71,71 @@ main, section, #projects, #achievements, #contact, footer {
 }
 
 .nav-link:hover {
-  color: #2563eb !important; /* blue accent */
+  color: #93c5fd !important; /* light blue hover */
 }
 
-/* Hero Carousel Section */
-#heroCarousel {
-  height: 90vh;
+/* Hero Section with Slideshow */
+.hero-section {
+  height: 100vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffffdd;
+  text-align: center;
+  padding: 0 20px;
   overflow: hidden;
 }
 
-#heroCarousel .carousel-item img {
-  height: 90vh;
-  object-fit: cover;
-  filter: none; /* no dark overlay */
-}
-
-#heroCarousel .carousel-caption {
+.hero-section::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: initial;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroSlideShow 9s infinite;
+  animation-timing-function: ease-in-out;
+  transition: background-image 1s ease-in-out;
 }
 
-#heroCarousel .carousel-caption h1 {
+@keyframes heroSlideShow {
+  0% {
+    background-image: url('images/hero.jpg');
+  }
+  33.33% {
+    background-image: url('images/hero1.jpg');
+  }
+  66.66% {
+    background-image: url('images/hero2.jpg');
+  }
+  100% {
+    background-image: url('images/hero.jpg');
+  }
+}
+
+.hero-section .container {
+  z-index: 1;
+  position: relative;
+  max-width: 900px;
+}
+
+.hero-section h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: 25px;
 }
 
-#heroCarousel .carousel-caption p {
+.hero-section p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #e0e7ff;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* Section Headings */
@@ -225,11 +257,11 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-  #heroCarousel .carousel-caption h1 {
+  .hero-section h1 {
     font-size: 2.5rem;
   }
 
-  #heroCarousel .carousel-caption p {
+  .hero-section p {
     font-size: 1.15rem;
   }
 

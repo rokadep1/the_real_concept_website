@@ -31,17 +31,16 @@ main, section, #projects, #achievements, #contact, footer {
 /* Navbar */
 .navbar {
   position: absolute;
-  top: 0;
+  top: 20px; /* push it slightly down */
   left: 0;
-  width: 100%;
-  padding: 0.6rem 1.5rem;
-  height: 65px;
+  right: 0;
+  z-index: 100;
   display: flex;
+  justify-content: space-between; /* logo left, links right */
   align-items: center;
-  justify-content: flex-start;
-  z-index: 10;
-  background-color: transparent;
-  box-shadow: none;
+  padding: 0 2rem;
+  background: transparent; /* no background strip */
+  height: auto;
 }
 
 .navbar-brand {
@@ -49,7 +48,7 @@ main, section, #projects, #achievements, #contact, footer {
   align-items: center;
   font-size: 1.7rem;
   font-weight: 700;
-  color: #ffffff; /* white for hero overlay */
+  color: #000000; /* pure black */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
 }
@@ -61,17 +60,23 @@ main, section, #projects, #achievements, #contact, footer {
   border-radius: 6px;
 }
 
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-link {
-  color: #ffffff !important;
-  margin-left: 1.3rem;
+  color: #000000 !important; /* pure black */
   font-weight: 600;
   font-size: 1rem;
   transition: color 0.3s ease;
   font-family: 'Poppins', sans-serif;
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  color: #93c5fd !important; /* light blue hover */
+  color: #2563eb !important; /* blue hover */
 }
 
 /* Hero Section with Slideshow */

@@ -1,3 +1,5 @@
+// Updated hero.js for <img> based slideshow
+
 document.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('.hero-slide');
   const prevBtn = document.querySelector('.hero-prev');
@@ -8,25 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.style.opacity = i === index ? '1' : '0';
-      slide.style.zIndex = i === index ? '2' : '1';
-      slide.style.transition = 'opacity 0.5s ease-in-out';
+      slide.classList.remove('active');
     });
+    slides[index].classList.add('active');
     current = index;
   }
 
   function nextSlide() {
-    let nextIndex = (current + 1) % slideCount;
+    const nextIndex = (current + 1) % slideCount;
     showSlide(nextIndex);
   }
 
   function prevSlide() {
-    let prevIndex = (current - 1 + slideCount) % slideCount;
+    const prevIndex = (current - 1 + slideCount) % slideCount;
     showSlide(prevIndex);
   }
 
   function startAutoSlide() {
-    slideInterval = setInterval(nextSlide, 2000);
+    slideInterval = setInterval(nextSlide, 4000);
   }
 
   function resetAutoSlide() {
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
       prevSlide();
       resetAutoSlide();
     });
+
     nextBtn.addEventListener('click', () => {
       nextSlide();
       resetAutoSlide();

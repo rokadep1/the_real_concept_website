@@ -38,7 +38,9 @@ main, section, #projects, #achievements, #contact, footer {
   display: flex;
   justify-content: space-between; /* logo left, links right */
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100%;
   background: transparent; /* no background strip */
   height: auto;
 }
@@ -51,6 +53,7 @@ main, section, #projects, #achievements, #contact, footer {
   color: #000000; /* pure black */
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
+  margin-left: -10px;
 }
 
 .navbar-brand img {
@@ -64,6 +67,7 @@ main, section, #projects, #achievements, #contact, footer {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  margin-right: -10px;
 }
 
 .nav-link {

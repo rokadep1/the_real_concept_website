@@ -176,11 +176,11 @@ main, section, #What We Do, #achievements, #contact, footer {
 /* Section Headings */
 section h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.75rem;
+  font-size: 2.rem;
   margin-bottom: 1.2rem;
   font-weight: 700;
   color: #1e293b;
-  border-bottom: 4px solid #2563eb;
+  /*border-bottom: 4px solid #2563eb;*/
   padding-bottom: 8px;
   display: inline-block;
 }
@@ -192,7 +192,7 @@ section h2 {
 
 .about-subsection h3 {
   font-size: 1.6rem;
-  color: #2563eb;
+  color: #6c757d;
   margin-bottom: 0.6rem;
   font-weight: 600;
 }
@@ -230,7 +230,7 @@ section h2 {
   background-color: #eff6ff;
   margin: 0;
   font-weight: 700;
-  color: #1e40af;
+  color: #6c757d;
   border-bottom: 1px solid #c7d2fe;
   font-family: 'Poppins', sans-serif;
 }

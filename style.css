@@ -261,7 +261,8 @@ section h2 {
 /* Clients Section */
 .client-logo {
   max-height: 100px;
-  width: auto;
+  max-width: 100%;
+  object-fit: contain;
   margin: 0 auto;
   display: block;
 }

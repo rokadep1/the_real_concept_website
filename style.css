@@ -42,7 +42,19 @@ main, section, #projects, #achievements, #contact, footer {
   width: 100%;
   background: transparent;
   height: auto;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
+
+/* *** NEW: Navbar styles when scrolled *** */
+.navbar.scrolled {
+  position: fixed; /* fixes navbar at top */
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  padding: 0.5rem 1rem; /* optional smaller padding */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+/* *** END NEW *** */
 
 .navbar-brand {
   display: flex;

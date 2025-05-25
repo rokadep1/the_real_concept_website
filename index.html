@@ -14,23 +14,47 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Add this inside your style.css or inline here for demonstration */
-
+    /* Keep your existing styles */
     .hero-navbar {
       background-color: transparent;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hero-navbar.scrolled {
-      background-color: #ffffff; /* solid dark background */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-    }
-    .hero-navbar {
       height: 70px; /* Set desired height */
       display: flex;
       align-items: center;
     }
+    .hero-navbar.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    }
 
+    /* New styles for rolling client logos carousel */
+    #clientsCarousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 900px; /* adjust as needed */
+      margin: 0 auto;
+    }
+    #clientsCarousel .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      will-change: transform;
+    }
+    .client-logo-wrapper {
+      flex: 0 0 33.3333%; /* show exactly 3 logos in viewport */
+      text-align: center;
+      padding: 10px;
+    }
+    .client-logo {
+      max-width: 100%;
+      max-height: 80px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+    .client-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -139,58 +163,38 @@
     </div>
   </section>
 
-  <!-- Clients logos -->
+  <!-- Clients logos with rolling effect -->
   <section id="clients" class="container mt-5">
     <h2 class="text-center mb-4">Our Clients</h2>
-    <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-      <div class="carousel-inner text-center">
-        <div class="carousel-item active">
-          <div class="client-logo-wrapper">
-            <img src="images/clients/Client1.jpg" class="client-logo" alt="KUNDAN SPACES" />
-            <div class="client-label">KUNDAN SPACES</div>
-          </div>
-      </div>
-      <div class="carousel-item">
+    <div id="clientsCarousel">
+      <div class="carousel-track">
         <div class="client-logo-wrapper">
-          <img src="images/clients/Client2.jpg" class="client-logo" alt="Client 2" />
+          <img src="images/clients/Client1.jpg" class="client-logo" alt="KUNDAN SPACES" />
+          <div class="client-label">KUNDAN SPACES</div>
+        </div>
+        <div class="client-logo-wrapper">
+          <img src="images/clients/Client2.jpg" class="client-logo" alt="TRIBUTE LANDMARK" />
           <div class="client-label">TRIBUTE LANDMARK</div>
         </div>
-      </div>
-      <div class="carousel-item">
         <div class="client-logo-wrapper">
-          <img src="images/clients/Client3.jpg" class="client-logo" alt="Client 3" />
+          <img src="images/clients/Client3.jpg" class="client-logo" alt="KHADAKI EDU. SOCIETY" />
           <div class="client-label">KHADAKI EDU. SOCIETY</div>
         </div>
-      </div>
-      <div class="carousel-item">
         <div class="client-logo-wrapper">
-          <img src="images/clients/Client4.jpg" class="client-logo" alt="Client 4" />
+          <img src="images/clients/Client4.jpg" class="client-logo" alt="YASH PHOTOS" />
           <div class="client-label">YASH PHOTOS</div>
         </div>
-      </div>
-      <div class="carousel-item">
         <div class="client-logo-wrapper">
-          <img src="images/clients/Client5.jpg" class="client-logo" alt="Client 5" />
+          <img src="images/clients/Client5.jpg" class="client-logo" alt="ROYAL ORANGE COUNTY" />
           <div class="client-label">ROYAL ORANGE COUNTY</div>
         </div>
-      </div>
-      <div class="carousel-item">
         <div class="client-logo-wrapper">
-          <img src="images/clients/Client6.png" class="client-logo" alt="Client 6" />
+          <img src="images/clients/Client6.png" class="client-logo" alt="JANATA EDU. SOCIETY" />
           <div class="client-label">JANATA EDU. SOCIETY</div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="container mt-5">
@@ -209,22 +213,68 @@
 
   <!-- Bootstrap JS Bundle (includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar scroll background script -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('.hero-navbar');  // Use hero-navbar here
-    const hero = document.querySelector('.hero-carousel');
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.hero-navbar');
+      const hero = document.querySelector('.hero-carousel');
 
-    function onScroll() {
-      if (window.scrollY > hero.offsetHeight) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+      function onScroll() {
+        if (window.scrollY > hero.offsetHeight) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
       }
-    }
 
-    window.addEventListener('scroll', onScroll);
-    onScroll();
-  });
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    });
+  </script>
+
+  <!-- Rolling clients logos script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector('#clientsCarousel .carousel-track');
+      const logos = track.children;
+      const totalLogos = logos.length;
+      const visibleCount = 3;
+      let index = 0;
+
+      // Clone first few logos to the end for infinite scroll effect
+      for (let i = 0; i < visibleCount; i++) {
+        track.appendChild(logos[i].cloneNode(true));
+      }
+
+      function moveNext() {
+        index++;
+        if (index > totalLogos) {
+          // Reset instantly without animation
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+          index = 1;
+          // Allow the transition again in next frame
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              track.style.transition = 'transform 0.5s ease-in-out';
+              track.style.transform = `translateX(-${index * (100 / visibleCount)}%)`;
+            });
+          });
+        } else {
+          track.style.transform = `translateX(-${index * (100 / visibleCount)}%)`;
+        }
+      }
+
+      // Auto scroll every 2 seconds
+      let intervalId = setInterval(moveNext, 2000);
+
+      // Optional: Pause on hover
+      track.parentElement.addEventListener('mouseenter', () => clearInterval(intervalId));
+      track.parentElement.addEventListener('mouseleave', () => {
+        intervalId = setInterval(moveNext, 2000);
+      });
+    });
   </script>
 </body>
 </html>

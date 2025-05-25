@@ -258,6 +258,14 @@ section h2 {
   margin-bottom: 18px;
   text-align: center;
 }
+/* Clients Section */
+.client-logo {
+  max-height: 100px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 
 /* Contact Section */
 #contact .text-left {

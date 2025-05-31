@@ -122,11 +122,11 @@ nav.scrolled ul li a:hover {
       opacity: 1;
     }
     .slide::after {
-      content: "";
-      position: absolute;
+      content: none;
+      /*position: absolute;
       top:0; left:0; right:0; bottom:0;
       background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;
+      z-index: 1;*/
     }
     .hero-content {
       position: absolute;
@@ -134,8 +134,9 @@ nav.scrolled ul li a:hover {
       top: 50%;
       left: 60px;
       transform: translateY(-50%);
-      color: white;
+      color: #fff;
       max-width: 600px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
     .hero-content h1 {
       font-size: 3.5rem;
@@ -145,6 +146,8 @@ nav.scrolled ul li a:hover {
     .hero-content p {
       font-size: 1.3rem;
       margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
     .hero-content button {
       background-color: #c17f3e;
@@ -307,16 +310,26 @@ nav.scrolled ul li a:hover {
 
   <!-- Hero Slideshow -->
   <section class="hero-slideshow">
-    <div class="slide active" style="background-image: url('images/hero/hero.jpg');"></div>
-    <div class="slide" style="background-image: url('images/hero/hero1.jpg');"></div>
-    <div class="slide" style="background-image: url('images/hero/hero2.jpg');"></div>
-
+  <div class="slide active" style="background-image: url('images/hero/hero.jpg');">
     <div class="hero-content">
       <h1>Transform Your Home</h1>
       <p>Beautiful interiors tailored to your lifestyle.</p>
-      <button>Explore Our Services</button>
     </div>
-  </section>
+  </div>
+  <div class="slide" style="background-image: url('images/hero/hero1.jpg');">
+    <div class="hero-content">
+      <h1>Design Your Dream Space</h1>
+      <p>Creating environments that inspire and relax.</p>
+    </div>
+  </div>
+  <div class="slide" style="background-image: url('images/hero/hero2.jpg');">
+    <div class="hero-content">
+      <h1>Elegance Meets Comfort</h1>
+      <p>Innovative designs for modern living.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- About Us -->
   <section id="aboutus" class="about-us container">

@@ -18,6 +18,15 @@
       line-height: 1.6;
       scroll-behavior: smooth; /* for smooth scroll on anchor links */
     }
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">What We Do</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
     a {
       color: #c17f3e;
       text-decoration: none;
@@ -32,39 +41,56 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(255 255 255 / 0); /* fully transparent */
-      display: flex;
-      justify-content: center;
       padding: 15px 0;
       z-index: 9999;
-      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
       font-weight: 600;
       font-size: 1.1rem;
       user-select: none;
-    }
-    nav.scrolled {
-      background: rgba(255 255 255 / 0.95); /* slight white background on scroll */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 40px;
-    }
-    nav ul li {
-      cursor: pointer;
-    }
-    nav ul li a {
-      color: #c17f3e;
-      text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-    nav ul li a:hover {
-      background-color: #c17f3e;
-      color: white;
-    }
+      background-color: transparent; /* start transparent */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white; /* white on transparent navbar */
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Navbar style after scrolling past hero */
+nav.scrolled {
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+nav.scrolled ul li a {
+  color: #333; /* dark text on white background */
+  text-shadow: none;
+}
+
+nav.scrolled ul li a:hover {
+  background-color: #c17f3e;
+  color: white;
+}
+
 
     .container {
       width: 90%;
@@ -354,9 +380,11 @@
 
   <script>
     // Change navbar background on scroll
-    const nav = document.getElementById('navbar');
+    const nav = document.querySelector('nav');
+    const heroHeight = document.querySelector('.hero-slideshow').offsetHeight;
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
+      if (window.scrollY > heroHeight - 80) { 
         nav.classList.add('scrolled');
       } else {
         nav.classList.remove('scrolled');

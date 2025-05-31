@@ -62,13 +62,13 @@ nav ul {
 }
 
 nav ul li a {
-  color: white; /* white on transparent navbar */
+  color: #222; /* white on transparent navbar */
   text-decoration: none;
   padding: 8px 10px;
   border-radius: 5px;
   text-shadow: 0 0 5px rgba(0,0,0,0.7);
   transition: color 0.3s ease, background-color 0.3s ease;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 nav ul li a:hover {
@@ -264,36 +264,88 @@ nav.scrolled ul li a:hover {
       color: #c17f3e;
     }
 
-    .clients {
-      background: #f3f1ed;
-      padding: 50px 0;
-    }
-    .clients .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-    }
-    .client-logo {
-      max-width: 140px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-    .client-logo:hover {
-      filter: none;
-      opacity: 1;
-    }
+    .clients-section {
+  padding: 60px 20px;
+  background-color: #fff; /* clean white background */
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.05); /* subtle inner shadow */
+}
 
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      nav ul {
-        gap: 20px;
-      }
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 40px;
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.clients-logos img {
+  max-width: 160px;
+  max-height: 130px;
+  object-fit: contain;
+  filter: none; /* keep original colors */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 12px;
+}
+
+.clients-logos img:hover,
+.clients-logos img:focus {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .clients-logos img {
+    max-width: 120px;
+    max-height: 70px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .clients-logos {
+    gap: 25px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -386,6 +438,23 @@ nav.scrolled ul li a:hover {
       </div>
     </div>
   </section>
+
+  <!-- Clinets section -->
+  <section id="clients" class="clients-section">
+  <div class="container">
+    <h2 class="section-title">Our Clients</h2>
+    <p class="section-subtitle">Trusted by industry leaders and innovators worldwide</p>
+    <div class="clients-logos">
+      <img src="images/clients/Client1.jpg" alt="Client 1 Logo" loading="lazy" />
+      <img src="images/clients/Client2.jpg" alt="Client 2 Logo" loading="lazy" />
+      <img src="images/clients/Client3.jpg" alt="Client 3 Logo" loading="lazy" />
+      <img src="images/clients/Client4.jpg" alt="Client 4 Logo" loading="lazy" />
+      <img src="images/clients/Client5.jpg" alt="Client 5 Logo" loading="lazy" />
+      <img src="images/clients/Client6.png" alt="Client 6 Logo" loading="lazy" />
+    </div>
+  </div>
+</section>
+
 
   <!-- Contact -->
   <section id="contact" class="contact">

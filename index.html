@@ -174,12 +174,24 @@ nav.scrolled ul li a:hover {
     }
 
     /* Other Sections - Keep your existing CSS unchanged */
-    .what-we-do, .achievements {
+    .achievements {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
       justify-content: center;
     }
+    .what-we-do {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-rows: repeat(2, auto);   /* 2 rows */
+      gap: 30px;
+      justify-items: center; /* center cards in each grid cell */
+      max-width: 700px; /* optional: limit container width for neatness */
+      margin: 0 auto; /* center container */
+    }
+
+/* Keep existing .service-card styles */
+
     .service-card {
       background: white;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);

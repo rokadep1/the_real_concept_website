@@ -25,7 +25,6 @@
       text-decoration: underline;
     }
 
-    /* Container for uniform width */
     .container {
       width: 90%;
       max-width: 1100px;
@@ -33,27 +32,25 @@
       padding: 40px 0;
     }
 
-    /* Hero Section with Slideshow */
-    .hero {
+    /* Hero Slideshow */
+    .hero-slideshow {
       position: relative;
       height: 70vh;
       overflow: hidden;
-      color: white;
     }
-    .hero-slide {
+    .slide {
       position: absolute;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
+      background-size: cover;
+      background-position: center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
     }
-    .hero-slide.active {
+    .slide.active {
       opacity: 1;
     }
-    .hero::after {
+    .slide::after {
       content: "";
       position: absolute;
       top:0; left:0; right:0; bottom:0;
@@ -61,23 +58,24 @@
       z-index: 1;
     }
     .hero-content {
-      position: relative;
+      position: absolute;
       z-index: 2;
-      max-width: 600px;
-      padding-left: 60px;
       top: 50%;
+      left: 60px;
       transform: translateY(-50%);
+      color: white;
+      max-width: 600px;
     }
-    .hero h1 {
+    .hero-content h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       font-weight: 700;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.3rem;
       margin-bottom: 30px;
     }
-    .hero button {
+    .hero-content button {
       background-color: #c17f3e;
       border: none;
       color: white;
@@ -87,7 +85,7 @@
       border-radius: 3px;
       transition: background-color 0.3s ease;
     }
-    .hero button:hover {
+    .hero-content button:hover {
       background-color: #a2672b;
     }
 
@@ -101,7 +99,7 @@
       letter-spacing: 1.2px;
     }
 
-    /* What We Do & Achievements */
+    /* Other Sections - Keep your existing CSS unchanged */
     .what-we-do, .achievements {
       display: flex;
       flex-wrap: wrap;
@@ -132,30 +130,6 @@
       color: #c17f3e;
     }
 
-    /* Our Clients */
-    .clients {
-      background: #f3f1ed;
-      padding: 50px 0;
-    }
-    .clients .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-    }
-    .client-logo {
-      max-width: 140px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-    .client-logo:hover {
-      filter: none;
-      opacity: 1;
-    }
-
-    /* About Us */
     .about-us {
       padding: 60px 0;
       max-width: 900px;
@@ -185,7 +159,6 @@
       line-height: 1.5;
     }
 
-    /* Contact */
     .contact {
       background: #c17f3e;
       color: white;
@@ -217,30 +190,42 @@
       color: #c17f3e;
     }
 
-    /* Responsive */
+    .clients {
+      background: #f3f1ed;
+      padding: 50px 0;
+    }
+    .clients .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    .client-logo {
+      max-width: 140px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+    .client-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+
     @media (max-width: 768px) {
-      .hero {
-        height: 50vh;
-      }
-      .hero h1 {
+      .hero-content h1 {
         font-size: 2.5rem;
-      }
-      .service-card {
-        max-width: 100%;
-      }
-      .clients .container {
-        gap: 25px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section with Slideshow -->
-  <section class="hero">
-    <img class="hero-slide active" src="images/hero/hero.jpg" alt="Hero Image 1">
-    <img class="hero-slide" src="images/hero/hero1.jpg" alt="Hero Image 2">
-    <img class="hero-slide" src="images/hero/hero2.jpg" alt="Hero Image 3">
+  <!-- Hero Slideshow -->
+  <section class="hero-slideshow">
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1400&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1400&q=80');"></div>
     <div class="hero-content">
       <h1>Transform Your Home</h1>
       <p>Beautiful interiors tailored to your lifestyle.</p>
@@ -270,7 +255,22 @@
   <section class="container">
     <h2 class="section-title">What We Do</h2>
     <div class="what-we-do">
-      <!-- service cards remain unchanged -->
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Modular Kitchens" />
+        <h3>Modular Kitchens</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Bedrooms" />
+        <h3>Bedrooms</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1501183638714-3c8b0f2a54b7?auto=format&fit=crop&w=400&q=80" alt="Living Rooms" />
+        <h3>Living Rooms</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Dining Rooms" />
+        <h3>Dining Rooms</h3>
+      </div>
     </div>
   </section>
 
@@ -278,34 +278,49 @@
   <section class="container">
     <h2 class="section-title">Achievements</h2>
     <div class="achievements">
-      <!-- achievement cards remain unchanged -->
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Award 1" />
+        <h3>Best Interior Design Award 2022</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Award 2" />
+        <h3>Innovative Space Design 2023</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Award 3" />
+        <h3>Customer Choice Award 2024</h3>
+      </div>
     </div>
   </section>
 
-  <!-- Our Clients -->
+  <!-- Clients -->
   <section class="clients">
     <div class="container">
       <h2 class="section-title">Our Valued Clients</h2>
-      <!-- client logos remain unchanged -->
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel" />
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section class="contact">
     <h2>Contact Us</h2>
-    <p>Ready to transform your home? Let’s start a conversation.</p>
-    <a href="mailto:contact@yourcompany.com">Email Us</a>
+    <p>Get in touch for a personalized consultation and bring your dream space to life.</p>
+    <a href="mailto:contact@interiordesign.com">Email Us</a>
   </section>
 
-  <!-- JavaScript for Slideshow -->
   <script>
-    let current = 0;
-    const slides = document.querySelectorAll('.hero-slide');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
     setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 4000);
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000); // change slide every 5 seconds
   </script>
 
 </body>

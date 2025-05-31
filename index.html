@@ -25,7 +25,6 @@
       text-decoration: underline;
     }
 
-    /* Container for uniform width */
     .container {
       width: 90%;
       max-width: 1100px;
@@ -33,19 +32,25 @@
       padding: 40px 0;
     }
 
-    /* Hero Section */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center center/cover no-repeat;
-      height: 70vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-left: 60px;
+    /* Hero Slideshow */
+    .hero-slideshow {
       position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
-    .hero::after {
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center top;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .slide::after {
       content: "";
       position: absolute;
       top:0; left:0; right:0; bottom:0;
@@ -53,20 +58,24 @@
       z-index: 1;
     }
     .hero-content {
-      position: relative;
+      position: absolute;
       z-index: 2;
+      top: 50%;
+      left: 60px;
+      transform: translateY(-50%);
+      color: white;
       max-width: 600px;
     }
-    .hero h1 {
+    .hero-content h1 {
       font-size: 3.5rem;
       margin-bottom: 20px;
       font-weight: 700;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.3rem;
       margin-bottom: 30px;
     }
-    .hero button {
+    .hero-content button {
       background-color: #c17f3e;
       border: none;
       color: white;
@@ -76,7 +85,7 @@
       border-radius: 3px;
       transition: background-color 0.3s ease;
     }
-    .hero button:hover {
+    .hero-content button:hover {
       background-color: #a2672b;
     }
 
@@ -90,7 +99,7 @@
       letter-spacing: 1.2px;
     }
 
-    /* What We Do & Achievements */
+    /* Other Sections - Keep your existing CSS unchanged */
     .what-we-do, .achievements {
       display: flex;
       flex-wrap: wrap;
@@ -121,30 +130,6 @@
       color: #c17f3e;
     }
 
-    /* Our Clients */
-    .clients {
-      background: #f3f1ed;
-      padding: 50px 0;
-    }
-    .clients .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-    }
-    .client-logo {
-      max-width: 140px;
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-    .client-logo:hover {
-      filter: none;
-      opacity: 1;
-    }
-
-    /* About Us */
     .about-us {
       padding: 60px 0;
       max-width: 900px;
@@ -174,7 +159,6 @@
       line-height: 1.5;
     }
 
-    /* Contact */
     .contact {
       background: #c17f3e;
       color: white;
@@ -206,28 +190,43 @@
       color: #c17f3e;
     }
 
-    /* Responsive */
+    .clients {
+      background: #f3f1ed;
+      padding: 50px 0;
+    }
+    .clients .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    .client-logo {
+      max-width: 140px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+    .client-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+
     @media (max-width: 768px) {
-      .hero {
-        height: 50vh;
-        padding-left: 30px;
-      }
-      .hero h1 {
+      .hero-content h1 {
         font-size: 2.5rem;
-      }
-      .service-card {
-        max-width: 100%;
-      }
-      .clients .container {
-        gap: 25px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Hero Slideshow -->
+  <section class="hero-slideshow">
+    <div class="slide active" style="background-image: url('images/hero/hero.jpg');"></div>
+    <div class="slide" style="background-image: url('images/hero/hero1.jpg');"></div>
+    <div class="slide" style="background-image: url('images/hero/hero2.jpg');"></div>
+
     <div class="hero-content">
       <h1>Transform Your Home</h1>
       <p>Beautiful interiors tailored to your lifestyle.</p>
@@ -239,17 +238,14 @@
   <section class="about-us container">
     <h2>About Us</h2>
     <p>We are passionate about designing spaces that blend elegance, comfort, and functionality. Our expert team transforms ideas into reality with attention to every detail.</p>
-
     <div class="subsection">
       <h4>Our Mission</h4>
       <p>To create inspiring interior spaces that elevate the quality of life for our clients.</p>
     </div>
-
     <div class="subsection">
       <h4>Our Vision</h4>
       <p>To be the leading interior design company recognized for innovation and excellence.</p>
     </div>
-
     <div class="subsection">
       <h4>Our Values</h4>
       <p>Integrity, creativity, and customer satisfaction are at the heart of everything we do.</p>
@@ -298,111 +294,35 @@
     </div>
   </section>
 
-<!-- Our Clients -->
-<section class="clients">
-  <div class="container">
-    <h2 class="section-title">Our Valued Clients</h2>
-    <div class="clients-grid">
-      <div class="client-card" title="Microsoft">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft Logo" />
-      </div>
-      <div class="client-card" title="Google Flutter">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter Logo" />
-      </div>
-      <div class="client-card" title="Apple">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" />
-      </div>
-      <div class="client-card" title="Netflix">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
-      </div>
-      <div class="client-card" title="Intel">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel Logo" />
-      </div>
+  <!-- Clients -->
+  <section class="clients">
+    <div class="container">
+      <h2 class="section-title">Our Valued Clients</h2>
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
+      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel" />
     </div>
-  </div>
-
-  <style>
-    .clients {
-      background: linear-gradient(135deg, #f7f6f2, #e6dfd5);
-      padding: 60px 0;
-      box-shadow: inset 0 0 30px rgba(193,127,62,0.1);
-    }
-    .clients .section-title {
-      color: #a36a1a;
-      font-weight: 700;
-      margin-bottom: 50px;
-      letter-spacing: 1.5px;
-      text-align: center;
-      font-size: 2.7rem;
-      position: relative;
-    }
-    .clients .section-title::after {
-      content: "";
-      display: block;
-      width: 80px;
-      height: 4px;
-      background: #c17f3e;
-      margin: 15px auto 0;
-      border-radius: 2px;
-    }
-    .clients-grid {
-      display: flex;
-      justify-content: center;
-      gap: 45px;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .client-card {
-      background: white;
-      padding: 20px 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 15px rgba(193,127,62,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      flex: 0 1 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .client-card img {
-      max-width: 100%;
-      max-height: 50px;
-      filter: grayscale(80%);
-      transition: filter 0.3s ease;
-    }
-    .client-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 25px rgba(193,127,62,0.4);
-    }
-    .client-card:hover img {
-      filter: none;
-    }
-    @media (max-width: 600px) {
-      .clients-grid {
-        gap: 25px;
-      }
-      .client-card {
-        flex: 1 1 120px;
-        padding: 15px 20px;
-      }
-      .client-card img {
-        max-height: 40px;
-      }
-      .clients .section-title {
-        font-size: 2rem;
-      }
-    }
-  </style>
-</section>
-
+  </section>
 
   <!-- Contact -->
   <section class="contact">
     <h2>Contact Us</h2>
-    <p>Ready to transform your space? Get in touch!</p>
+    <p>Get in touch for a personalized consultation and bring your dream space to life.</p>
     <a href="mailto:contact@interiordesign.com">Email Us</a>
   </section>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 5000); // change slide every 5 seconds
+  </script>
 
 </body>
 </html>

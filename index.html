@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Interior Design - Hero Slideshow & Navbar</title>
+  <title>Interior Design - Inspired Layout</title>
   <style>
     /* Reset */
     * {
@@ -25,85 +25,48 @@
       text-decoration: underline;
     }
 
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 60px;
-      background-color: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      padding: 0 40px;
-      z-index: 10;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    nav .logo {
-      font-size: 1.5rem;
-      color: #c17f3e;
-      font-weight: 700;
-    }
-    nav ul {
-      list-style: none;
-      margin-left: auto;
-      display: flex;
-      gap: 25px;
-      font-size: 1rem;
-    }
-    nav ul li a {
-      color: #333;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    nav ul li a:hover {
-      background-color: #c17f3e;
-      color: white;
+    /* Container for uniform width */
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 0;
     }
 
-    /* Hero Slideshow */
-    .hero-slider {
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center center/cover no-repeat;
+      height: 70vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 60px;
       position: relative;
-      margin-top: 60px; /* space for navbar */
-      height: 75vh;
-      max-height: 700px;
-      overflow: hidden;
     }
-    .slide {
+    .hero::after {
+      content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-position: center;
-      background-size: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      z-index: 0;
-    }
-    .slide.active {
-      opacity: 1;
+      top:0; left:0; right:0; bottom:0;
+      background-color: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
-
-    /* Hero Text overlay */
-    .hero-text {
-      position: absolute;
-      bottom: 40px;
-      left: 40px;
-      color: white;
-      text-shadow: 0 0 12px rgba(0,0,0,0.7);
-      max-width: 600px;
+    .hero-content {
+      position: relative;
       z-index: 2;
+      max-width: 600px;
     }
-    .hero-text h1 {
+    .hero h1 {
       font-size: 3.5rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       font-weight: 700;
     }
-    .hero-text p {
+    .hero p {
       font-size: 1.3rem;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
-    .hero-text button {
+    .hero button {
       background-color: #c17f3e;
       border: none;
       color: white;
@@ -113,83 +76,333 @@
       border-radius: 3px;
       transition: background-color 0.3s ease;
     }
-    .hero-text button:hover {
+    .hero button:hover {
       background-color: #a2672b;
+    }
+
+    /* Section Headings */
+    h2.section-title {
+      text-align: center;
+      color: #c17f3e;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    /* What We Do & Achievements */
+    .what-we-do, .achievements {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .service-card {
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      flex: 1 1 280px;
+      max-width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .service-card h3 {
+      padding: 15px;
+      font-size: 1.3rem;
+      color: #c17f3e;
+    }
+
+    /* Our Clients */
+    .clients {
+      background: #f3f1ed;
+      padding: 50px 0;
+    }
+    .clients .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+    .client-logo {
+      max-width: 140px;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+    .client-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+
+    /* About Us */
+    .about-us {
+      padding: 60px 0;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-us h2 {
+      margin-bottom: 25px;
+      color: #c17f3e;
+    }
+    .about-us p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .about-us .subsection {
+      margin-top: 40px;
+      text-align: left;
+    }
+    .about-us .subsection h4 {
+      color: #a36a1a;
+      margin-bottom: 10px;
+    }
+    .about-us .subsection p {
+      font-size: 1rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* Contact */
+    .contact {
+      background: #c17f3e;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contact h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2.2rem;
+    }
+    .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .contact a {
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border: 2px solid white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .contact a:hover {
+      background-color: white;
+      color: #c17f3e;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      nav {
-        padding: 0 20px;
+      .hero {
+        height: 50vh;
+        padding-left: 30px;
       }
-      nav ul {
-        gap: 15px;
-        font-size: 0.9rem;
+      .hero h1 {
+        font-size: 2.5rem;
       }
-      .hero-text h1 {
-        font-size: 2.2rem;
+      .service-card {
+        max-width: 100%;
       }
-      .hero-text p {
-        font-size: 1rem;
-      }
-      .hero-text {
-        left: 20px;
-        bottom: 30px;
+      .clients .container {
+        gap: 25px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">YourLogo</div>
-    <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#services">What We Do</a></li>
-      <li><a href="#clients">Our Clients</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Home</h1>
+      <p>Beautiful interiors tailored to your lifestyle.</p>
+      <button>Explore Our Services</button>
+    </div>
+  </section>
 
-  <!-- Hero Slideshow -->
-  <section class="hero-slider">
-    <div class="slide active" style="background-image: url('images/hero/hero.jpg');">
-      <div class="hero-text">
-        <h1>Transform Your Home</h1>
-        <p>Beautiful interiors tailored to your lifestyle.</p>
-        <button>Explore Our Services</button>
-      </div>
+  <!-- About Us -->
+  <section class="about-us container">
+    <h2>About Us</h2>
+    <p>We are passionate about designing spaces that blend elegance, comfort, and functionality. Our expert team transforms ideas into reality with attention to every detail.</p>
+
+    <div class="subsection">
+      <h4>Our Mission</h4>
+      <p>To create inspiring interior spaces that elevate the quality of life for our clients.</p>
     </div>
-    <div class="slide" style="background-image: url('images/hero/hero1.jpg');">
-      <div class="hero-text">
-        <h1>Innovative Design Solutions</h1>
-        <p>Creating spaces that inspire and delight.</p>
-        <button>Discover More</button>
-      </div>
+
+    <div class="subsection">
+      <h4>Our Vision</h4>
+      <p>To be the leading interior design company recognized for innovation and excellence.</p>
     </div>
-    <div class="slide" style="background-image: url('images/hero/hero2.jpg');">
-      <div class="hero-text">
-        <h1>Elegant & Functional Interiors</h1>
-        <p>Where style meets comfort perfectly.</p>
-        <button>Get Started</button>
+
+    <div class="subsection">
+      <h4>Our Values</h4>
+      <p>Integrity, creativity, and customer satisfaction are at the heart of everything we do.</p>
+    </div>
+  </section>
+
+  <!-- What We Do -->
+  <section class="container">
+    <h2 class="section-title">What We Do</h2>
+    <div class="what-we-do">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Modular Kitchens" />
+        <h3>Modular Kitchens</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Bedrooms" />
+        <h3>Bedrooms</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1501183638714-3c8b0f2a54b7?auto=format&fit=crop&w=400&q=80" alt="Living Rooms" />
+        <h3>Living Rooms</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Dining Rooms" />
+        <h3>Dining Rooms</h3>
       </div>
     </div>
   </section>
 
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
-    const slideInterval = 5000; // 5 seconds
+  <!-- Achievements -->
+  <section class="container">
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievements">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Award 1" />
+        <h3>Best Interior Design Award 2022</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Award 2" />
+        <h3>Innovative Space Design 2023</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Award 3" />
+        <h3>Customer Choice Award 2024</h3>
+      </div>
+    </div>
+  </section>
 
-    function showNextSlide() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
+<!-- Our Clients -->
+<section class="clients">
+  <div class="container">
+    <h2 class="section-title">Our Valued Clients</h2>
+    <div class="clients-grid">
+      <div class="client-card" title="Microsoft">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft Logo" />
+      </div>
+      <div class="client-card" title="Google Flutter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter Logo" />
+      </div>
+      <div class="client-card" title="Apple">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" />
+      </div>
+      <div class="client-card" title="Netflix">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
+      </div>
+      <div class="client-card" title="Intel">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel Logo" />
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .clients {
+      background: linear-gradient(135deg, #f7f6f2, #e6dfd5);
+      padding: 60px 0;
+      box-shadow: inset 0 0 30px rgba(193,127,62,0.1);
     }
+    .clients .section-title {
+      color: #a36a1a;
+      font-weight: 700;
+      margin-bottom: 50px;
+      letter-spacing: 1.5px;
+      text-align: center;
+      font-size: 2.7rem;
+      position: relative;
+    }
+    .clients .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #c17f3e;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    .clients-grid {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .client-card {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(193,127,62,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 0 1 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .client-card img {
+      max-width: 100%;
+      max-height: 50px;
+      filter: grayscale(80%);
+      transition: filter 0.3s ease;
+    }
+    .client-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(193,127,62,0.4);
+    }
+    .client-card:hover img {
+      filter: none;
+    }
+    @media (max-width: 600px) {
+      .clients-grid {
+        gap: 25px;
+      }
+      .client-card {
+        flex: 1 1 120px;
+        padding: 15px 20px;
+      }
+      .client-card img {
+        max-height: 40px;
+      }
+      .clients .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</section>
 
-    setInterval(showNextSlide, slideInterval);
-  </script>
+
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to transform your space? Get in touch!</p>
+    <a href="mailto:contact@interiordesign.com">Email Us</a>
+  </section>
 
 </body>
 </html>

@@ -402,44 +402,124 @@ nav.scrolled ul li a:hover {
   </section>
 
   <!-- What We Do -->
-  <section id="what-we-do" class="py-12 bg-gray-50">
+  <!-- ===========================
+     What We Do Section
+=========================== -->
+<section id="what-we-do" class="py-12 bg-gray-50">
   <div class="container mx-auto px-4 text-center">
     <h2 class="text-4xl font-bold mb-4">What We Do</h2>
     <p class="text-gray-600 mb-12">Transforming every corner of your space with style and functionality.</p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      
-      <!-- Living -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+    <!-- Grid: 1 column on mobile, 2 columns on sm+ screens -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+      <!-- ===== Card 1: Living ===== -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
         <img src="images/whatwedo/living.jpg" alt="Living" class="w-full h-40 object-cover rounded-lg mb-4">
         <h3 class="text-xl font-semibold mb-2">Living</h3>
-        <p class="text-gray-600">Designing cozy, modern living spaces tailored to your lifestyle.</p>
+        <p class="text-gray-600 mb-4">Designing cozy, modern living spaces tailored to your lifestyle.</p>
+        <button onclick="openModal('modal-living')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
+          See More
+        </button>
       </div>
 
-      <!-- Bedroom -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+      <!-- ===== Card 2: Bedroom ===== -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
         <img src="images/whatwedo/bedroom.jpg" alt="Bedroom" class="w-full h-40 object-cover rounded-lg mb-4">
         <h3 class="text-xl font-semibold mb-2">Bedroom</h3>
-        <p class="text-gray-600">Elegant wardrobes and bedroom setups for comfort and storage.</p>
+        <p class="text-gray-600 mb-4">Elegant bedroom setups with smart storage and style.</p>
+        <button onclick="openModal('modal-bedroom')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
+          See More
+        </button>
       </div>
 
-      <!-- Kitchen -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+      <!-- ===== Card 3: Kitchen ===== -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
         <img src="images/whatwedo/kitchen.jpg" alt="Kitchen" class="w-full h-40 object-cover rounded-lg mb-4">
         <h3 class="text-xl font-semibold mb-2">Kitchen</h3>
-        <p class="text-gray-600">Smart kitchen interiors with efficient, beautiful layouts.</p>
+        <p class="text-gray-600 mb-4">Smart kitchen interiors with efficient, beautiful layouts.</p>
+        <button onclick="openModal('modal-kitchen')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
+          See More
+        </button>
       </div>
 
-      <!-- Exteriors -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition">
+      <!-- ===== Card 4: Exteriors ===== -->
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
         <img src="images/whatwedo/exteriors.jpg" alt="Exteriors" class="w-full h-40 object-cover rounded-lg mb-4">
         <h3 class="text-xl font-semibold mb-2">Exteriors</h3>
-        <p class="text-gray-600">Stunning exterior designs that enhance your property’s curb appeal.</p>
+        <p class="text-gray-600 mb-4">Stunning exterior designs that enhance curb appeal.</p>
+        <button onclick="openModal('modal-exteriors')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
+          See More
+        </button>
       </div>
 
     </div>
   </div>
 </section>
+
+
+<!-- ===========================
+     Modals: Living, Bedroom, Kitchen, Exteriors
+=========================== -->
+
+<!-- Living Modal -->
+<div id="modal-living" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
+  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
+    <button onclick="closeModal('modal-living')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
+    <h3 class="text-2xl font-semibold mb-4">Living Room Designs</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="images/whatwedo/living1.jpg" alt="Living 1" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/living2.jpg" alt="Living 2" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/living3.jpg" alt="Living 3" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/living4.jpg" alt="Living 4" class="rounded-lg w-full h-52 object-cover">
+    </div>
+  </div>
+</div>
+
+<!-- Bedroom Modal -->
+<div id="modal-bedroom" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
+  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
+    <button onclick="closeModal('modal-bedroom')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
+    <h3 class="text-2xl font-semibold mb-4">Bedroom Designs</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="images/whatwedo/bedroom1.jpg" alt="Bedroom 1" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/bedroom2.jpg" alt="Bedroom 2" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/bedroom3.jpg" alt="Bedroom 3" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/bedroom4.jpg" alt="Bedroom 4" class="rounded-lg w-full h-52 object-cover">
+    </div>
+  </div>
+</div>
+
+<!-- Kitchen Modal -->
+<div id="modal-kitchen" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
+  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
+    <button onclick="closeModal('modal-kitchen')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
+    <h3 class="text-2xl font-semibold mb-4">Kitchen Designs</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="images/whatwedo/kitchen1.jpg" alt="Kitchen 1" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/kitchen2.jpg" alt="Kitchen 2" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/kitchen3.jpg" alt="Kitchen 3" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/kitchen4.jpg" alt="Kitchen 4" class="rounded-lg w-full h-52 object-cover">
+    </div>
+  </div>
+</div>
+
+<!-- Exteriors Modal -->
+<div id="modal-exteriors" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
+  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
+    <button onclick="closeModal('modal-exteriors')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
+    <h3 class="text-2xl font-semibold mb-4">Exterior Designs</h3>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="images/whatwedo/exterior1.jpg" alt="Exterior 1" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/exterior2.jpg" alt="Exterior 2" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/exterior3.jpg" alt="Exterior 3" class="rounded-lg w-full h-52 object-cover">
+      <img src="images/whatwedo/exterior4.jpg" alt="Exterior 4" class="rounded-lg w-full h-52 object-cover">
+    </div>
+  </div>
+</div>
+
+
+
 
 
   <!-- Achievements -->
@@ -508,6 +588,20 @@ nav.scrolled ul li a:hover {
     }
     setInterval(nextSlide, 5000); // change slide every 5 seconds
   </script>
+  <!-- ===========================
+     Modal JavaScript
+=========================== -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+    document.getElementById(id).classList.add('flex');
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('flex');
+    document.getElementById(id).classList.add('hidden');
+  }
+</script>
 
 </body>
 </html>

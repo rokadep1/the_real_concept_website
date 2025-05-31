@@ -182,11 +182,11 @@ nav.scrolled ul li a:hover {
     }
     .what-we-do {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
-      grid-template-rows: repeat(2, auto);   /* 2 rows */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      /*grid-template-rows: repeat(2, auto);   /* 2 rows */ */
       gap: 30px;
       justify-items: center; /* center cards in each grid cell */
-      max-width: 700px; /* optional: limit container width for neatness */
+      max-width: 900px; /* optional: limit container width for neatness */
       margin: 0 auto; /* center container */
     }
 

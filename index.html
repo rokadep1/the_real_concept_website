@@ -299,14 +299,103 @@
   </section>
 
   <!-- Our Clients -->
-  <section class="clients">
-    <div class="container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Client 1" class="client-logo" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Client 2" class="client-logo" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Adobe_Corporate_Logo.png" alt="Client 3" class="client-logo" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Apple_logo_black.svg" alt="Client 4" class="client-logo" />
+<section class="clients">
+  <div class="container">
+    <h2 class="section-title">Our Valued Clients</h2>
+    <div class="clients-grid">
+      <div class="client-card" title="Microsoft">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft Logo" />
+      </div>
+      <div class="client-card" title="Google Flutter">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter Logo" />
+      </div>
+      <div class="client-card" title="Apple">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" />
+      </div>
+      <div class="client-card" title="Netflix">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix Logo" />
+      </div>
+      <div class="client-card" title="Intel">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel Logo" />
+      </div>
     </div>
-  </section>
+  </div>
+
+  <style>
+    .clients {
+      background: linear-gradient(135deg, #f7f6f2, #e6dfd5);
+      padding: 60px 0;
+      box-shadow: inset 0 0 30px rgba(193,127,62,0.1);
+    }
+    .clients .section-title {
+      color: #a36a1a;
+      font-weight: 700;
+      margin-bottom: 50px;
+      letter-spacing: 1.5px;
+      text-align: center;
+      font-size: 2.7rem;
+      position: relative;
+    }
+    .clients .section-title::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #c17f3e;
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+    .clients-grid {
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .client-card {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(193,127,62,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      flex: 0 1 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .client-card img {
+      max-width: 100%;
+      max-height: 50px;
+      filter: grayscale(80%);
+      transition: filter 0.3s ease;
+    }
+    .client-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(193,127,62,0.4);
+    }
+    .client-card:hover img {
+      filter: none;
+    }
+    @media (max-width: 600px) {
+      .clients-grid {
+        gap: 25px;
+      }
+      .client-card {
+        flex: 1 1 120px;
+        padding: 15px 20px;
+      }
+      .client-card img {
+        max-height: 40px;
+      }
+      .clients .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</section>
+
 
   <!-- Contact -->
   <section class="contact">

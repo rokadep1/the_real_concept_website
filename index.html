@@ -18,24 +18,6 @@
       line-height: 1.6;
       scroll-behavior: smooth; /* for smooth scroll on anchor links */
     }
-    <nav>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#services">What We Do</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#clients">Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    a {
-      color: #c17f3e;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Transparent fixed navbar */
     nav {
       position: fixed;
       top: 0;
@@ -51,47 +33,46 @@
       font-size: 1.1rem;
       user-select: none;
       background-color: transparent; /* start transparent */
-}
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li a {
-  color: #222; /* white on transparent navbar */
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 5px;
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
-  transition: color 0.3s ease, background-color 0.3s ease;
-  font-weight: 650;
-}
+    nav ul li a {
+      color: #222; /* white on transparent navbar */
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 5px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+      transition: color 0.3s ease, background-color 0.3s ease;
+      font-weight: 650;
+    }
 
-nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
-}
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
 
-/* Navbar style after scrolling past hero */
-nav.scrolled {
-  background-color: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+    /* Navbar style after scrolling past hero */
+    nav.scrolled {
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
 
-nav.scrolled ul li a {
-  color: #333; /* dark text on white background */
-  text-shadow: none;
-}
+    nav.scrolled ul li a {
+      color: #333; /* dark text on white background */
+      text-shadow: none;
+    }
 
-nav.scrolled ul li a:hover {
-  background-color: #c17f3e;
-  color: white;
-}
-
+    nav.scrolled ul li a:hover {
+      background-color: #c17f3e;
+      color: white;
+    }
 
     .container {
       width: 90%;
@@ -120,13 +101,6 @@ nav.scrolled ul li a:hover {
     }
     .slide.active {
       opacity: 1;
-    }
-    .slide::after {
-      content: none;
-      /*position: absolute;
-      top:0; left:0; right:0; bottom:0;
-      background-color: rgba(0, 0, 0, 0.4);
-      z-index: 1;*/
     }
     .hero-content {
       position: absolute;
@@ -265,343 +239,374 @@ nav.scrolled ul li a:hover {
     }
 
     .clients-section {
-  padding: 60px 20px;
-  background-color: #fff; /* clean white background */
-  color: #222;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.05); /* subtle inner shadow */
-}
+      padding: 60px 20px;
+      background-color: #fff; /* clean white background */
+      color: #222;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.05); /* subtle inner shadow */
+    }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.section-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 8px;
-  color: #1a1a1a;
-}
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
 
-.section-subtitle {
-  text-align: center;
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: #666;
-  margin-bottom: 40px;
-  letter-spacing: 0.03em;
-  font-style: italic;
-}
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+      font-style: italic;
+    }
 
-.clients-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
+    .clients-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
 
-.clients-logos img {
-  max-width: 160px;
-  max-height: 130px;
-  object-fit: contain;
-  filter: none; /* keep original colors */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #fff;
-  padding: 12px;
-}
+    .clients-logos img {
+      max-width: 160px;
+      max-height: 130px;
+      object-fit: contain;
+      filter: none; /* keep original colors */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+      padding: 12px;
+    }
 
-.clients-logos img:hover,
-.clients-logos img:focus {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  cursor: pointer;
-  outline: none;
-}
+    .clients-logos img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .clients-logos img {
-    max-width: 120px;
-    max-height: 70px;
-    padding: 8px;
-  }
-}
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .hero-content {
+        left: 20px;
+        max-width: 90%;
+      }
+      nav ul {
+        gap: 20px;
+        padding-right: 20px;
+      }
+      .what-we-do, .achievements {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        padding-right: 20px;
+      }
+    }
 
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 2rem;
-  }
+    /* ===== Modal Popup for See More ===== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    }
 
-  .section-subtitle {
-    font-size: 1rem;
-    margin-bottom: 30px;
-  }
+    .modal-overlay.active {
+      display: flex;
+    }
 
-  .clients-logos {
-    gap: 25px;
-  }
-}
+    .modal-content {
+      background: white;
+      padding: 25px;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      position: relative;
+      text-align: center;
+    }
 
+    .modal-content h3 {
+      margin-bottom: 20px;
+      color: #c17f3e;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .modal-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .modal-images img {
+      max-width: 150px;
+      max-height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .modal-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      background: #c17f3e;
+      color: white;
+      border: none;
+      font-size: 1.4rem;
+      font-weight: 700;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      line-height: 0;
+      text-align: center;
+      padding: 0;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .modal-close-btn:hover {
+      background-color: #a3672b;
+    }
+
+    /* See More Button */
+    .see-more-btn {
+      background-color: #c17f3e;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      margin: 15px 0 20px;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .see-more-btn:hover {
+      background-color: #a2672b;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Transparent Navbar -->
+  <!-- Navbar -->
   <nav id="navbar">
     <ul>
-      <li><a href="#aboutus">About Us</a></li>
-      <li><a href="#whatwedo">What We Do</a></li>
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#what-we-do">What We Do</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Contact Us</a></li>
     </ul>
   </nav>
 
   <!-- Hero Slideshow -->
   <section class="hero-slideshow">
-  <div class="slide active" style="background-image: url('images/hero/hero.jpg');">
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1470&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1501183638714-35a3e86d9e22?auto=format&fit=crop&w=1470&q=80');"></div>
     <div class="hero-content">
-      <h1>Transform Your Home</h1>
-      <p>Beautiful interiors tailored to your lifestyle.</p>
+      <h1>Welcome to Our Interior Design Company</h1>
+      <p>Crafting inspiring, elegant, and functional spaces tailored to your dreams.</p>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Contact Us</button>
     </div>
-  </div>
-  <div class="slide" style="background-image: url('images/hero/hero1.jpg');">
-    <div class="hero-content">
-      <h1>Design Your Dream Space</h1>
-      <p>Creating environments that inspire and relax.</p>
-    </div>
-  </div>
-  <div class="slide" style="background-image: url('images/hero/hero2.jpg');">
-    <div class="hero-content">
-      <h1>Elegance Meets Comfort</h1>
-      <p>Innovative designs for modern living.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- About Us -->
-  <section id="aboutus" class="about-us container">
+  <!-- About Us Section -->
+  <section id="about-us" class="about-us container">
     <h2>About Us</h2>
-    <p>We are passionate about designing spaces that blend elegance, comfort, and functionality. Our expert team transforms ideas into reality with attention to every detail.</p>
+    <p>We specialize in transforming your spaces into elegant, functional areas that reflect your personality and style. With years of expertise, our team is dedicated to delivering exceptional interior design solutions.</p>
     <div class="subsection">
-      <h4>Our Mission</h4>
-      <p>To create inspiring interior spaces that elevate the quality of life for our clients.</p>
+      <h4>Mission</h4>
+      <p>To create timeless, innovative designs that enhance the quality of life for our clients.</p>
     </div>
     <div class="subsection">
-      <h4>Our Vision</h4>
-      <p>To be the leading interior design company recognized for innovation and excellence.</p>
+      <h4>Vision</h4>
+      <p>To be recognized as the most trusted and creative interior design company worldwide.</p>
     </div>
     <div class="subsection">
       <h4>Our Values</h4>
-      <p>Integrity, creativity, and customer satisfaction are at the heart of everything we do.</p>
+      <p>Integrity, creativity, collaboration, and excellence guide every project we undertake.</p>
     </div>
   </section>
 
-  <!-- What We Do -->
-  <!-- ===========================
-     What We Do Section
-=========================== -->
-<section id="what-we-do" class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4 text-center">
-    <h2 class="text-4xl font-bold mb-4">What We Do</h2>
-    <p class="text-gray-600 mb-12">Transforming every corner of your space with style and functionality.</p>
+  <!-- What We Do Section -->
+  <section id="what-we-do" class="what-we-do container">
+    <h2 class="section-title">What We Do</h2>
 
-    <!-- Grid: 1 column on mobile, 2 columns on sm+ screens -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-
-      <!-- ===== Card 1: Living ===== -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
-        <img src="images/whatwedo/living.jpg" alt="Living" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">Living</h3>
-        <p class="text-gray-600 mb-4">Designing cozy, modern living spaces tailored to your lifestyle.</p>
-        <button onclick="openModal('modal-living')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-          See More
-        </button>
-      </div>
-
-      <!-- ===== Card 2: Bedroom ===== -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
-        <img src="images/whatwedo/bedroom.jpg" alt="Bedroom" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">Bedroom</h3>
-        <p class="text-gray-600 mb-4">Elegant bedroom setups with smart storage and style.</p>
-        <button onclick="openModal('modal-bedroom')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-          See More
-        </button>
-      </div>
-
-      <!-- ===== Card 3: Kitchen ===== -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
-        <img src="images/whatwedo/kitchen.jpg" alt="Kitchen" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">Kitchen</h3>
-        <p class="text-gray-600 mb-4">Smart kitchen interiors with efficient, beautiful layouts.</p>
-        <button onclick="openModal('modal-kitchen')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-          See More
-        </button>
-      </div>
-
-      <!-- ===== Card 4: Exteriors ===== -->
-      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition relative">
-        <img src="images/whatwedo/exteriors.jpg" alt="Exteriors" class="w-full h-40 object-cover rounded-lg mb-4">
-        <h3 class="text-xl font-semibold mb-2">Exteriors</h3>
-        <p class="text-gray-600 mb-4">Stunning exterior designs that enhance curb appeal.</p>
-        <button onclick="openModal('modal-exteriors')" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-          See More
-        </button>
-      </div>
-
+    <div class="service-card" data-service="space-planning">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=500&q=60" alt="Space Planning" />
+      <h3>Space Planning</h3>
+      <button class="see-more-btn" data-service="space-planning">See More</button>
     </div>
-  </div>
-</section>
 
-
-<!-- ===========================
-     Modals: Living, Bedroom, Kitchen, Exteriors
-=========================== -->
-
-<!-- Living Modal -->
-<div id="modal-living" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
-  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
-    <button onclick="closeModal('modal-living')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
-    <h3 class="text-2xl font-semibold mb-4">Living Room Designs</h3>
-    <div class="grid grid-cols-2 gap-4">
-      <img src="images/whatwedo/living1.jpg" alt="Living 1" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/living2.jpg" alt="Living 2" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/living3.jpg" alt="Living 3" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/living4.jpg" alt="Living 4" class="rounded-lg w-full h-52 object-cover">
+    <div class="service-card" data-service="interior-design">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=60" alt="Interior Design" />
+      <h3>Interior Design</h3>
+      <button class="see-more-btn" data-service="interior-design">See More</button>
     </div>
-  </div>
-</div>
 
-<!-- Bedroom Modal -->
-<div id="modal-bedroom" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
-  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
-    <button onclick="closeModal('modal-bedroom')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
-    <h3 class="text-2xl font-semibold mb-4">Bedroom Designs</h3>
-    <div class="grid grid-cols-2 gap-4">
-      <img src="images/whatwedo/bedroom1.jpg" alt="Bedroom 1" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/bedroom2.jpg" alt="Bedroom 2" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/bedroom3.jpg" alt="Bedroom 3" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/bedroom4.jpg" alt="Bedroom 4" class="rounded-lg w-full h-52 object-cover">
+    <div class="service-card" data-service="project-management">
+      <img src="https://images.unsplash.com/photo-1501183638714-35a3e86d9e22?auto=format&fit=crop&w=500&q=60" alt="Project Management" />
+      <h3>Project Management</h3>
+      <button class="see-more-btn" data-service="project-management">See More</button>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Kitchen Modal -->
-<div id="modal-kitchen" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
-  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
-    <button onclick="closeModal('modal-kitchen')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
-    <h3 class="text-2xl font-semibold mb-4">Kitchen Designs</h3>
-    <div class="grid grid-cols-2 gap-4">
-      <img src="images/whatwedo/kitchen1.jpg" alt="Kitchen 1" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/kitchen2.jpg" alt="Kitchen 2" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/kitchen3.jpg" alt="Kitchen 3" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/kitchen4.jpg" alt="Kitchen 4" class="rounded-lg w-full h-52 object-cover">
-    </div>
-  </div>
-</div>
-
-<!-- Exteriors Modal -->
-<div id="modal-exteriors" class="modal fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-70">
-  <div class="bg-white rounded-xl shadow-lg p-6 max-w-4xl w-full relative">
-    <button onclick="closeModal('modal-exteriors')" class="absolute top-4 right-4 text-2xl font-bold text-gray-700 hover:text-black">×</button>
-    <h3 class="text-2xl font-semibold mb-4">Exterior Designs</h3>
-    <div class="grid grid-cols-2 gap-4">
-      <img src="images/whatwedo/exterior1.jpg" alt="Exterior 1" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/exterior2.jpg" alt="Exterior 2" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/exterior3.jpg" alt="Exterior 3" class="rounded-lg w-full h-52 object-cover">
-      <img src="images/whatwedo/exterior4.jpg" alt="Exterior 4" class="rounded-lg w-full h-52 object-cover">
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  <!-- Achievements -->
-  <section id="achievements" class="container achievements">
+  <!-- Achievements Section -->
+  <section id="achievements" class="achievements container">
     <h2 class="section-title">Achievements</h2>
-    <div class="achievements">
-      <div class="service-card">
-        <img src="images/achievements/img1.jpg" alt="Award 1" />
-        <h3>Best Interior Design 2023</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/achievements/img2.jpg" alt="Award 2" />
-        <h3>Top 10 Innovators</h3>
-      </div>
-      <div class="service-card">
-        <img src="images/achievements/img3.jpg" alt="Award 3" />
-        <h3>Customer Choice Award</h3>
-      </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=60" alt="Award 1" />
+      <h3>Best Design Award 2023</h3>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=60" alt="Award 2" />
+      <h3>Innovative Interiors 2022</h3>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1501183638714-35a3e86d9e22?auto=format&fit=crop&w=400&q=60" alt="Award 3" />
+      <h3>Customer Choice Award 2021</h3>
     </div>
   </section>
 
-  <!-- Clinets section -->
-  <section id="clients" class="clients-section">
-  <div class="container">
-    <h2 class="section-title">Our Clients</h2>
-    <p class="section-subtitle">Trusted by industry leaders and innovators worldwide</p>
-    <div class="clients-logos">
-      <img src="images/clients/Client1.jpg" alt="Client 1 Logo" loading="lazy" />
-      <img src="images/clients/Client2.jpg" alt="Client 2 Logo" loading="lazy" />
-      <img src="images/clients/Client3.jpg" alt="Client 3 Logo" loading="lazy" />
-      <img src="images/clients/Client4.jpg" alt="Client 4 Logo" loading="lazy" />
-      <img src="images/clients/Client5.jpg" alt="Client 5 Logo" loading="lazy" />
-      <img src="images/clients/Client6.png" alt="Client 6 Logo" loading="lazy" />
-    </div>
-  </div>
-</section>
-
-
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>Reach out to us to start your dream project today!</p>
-    <a href="mailto:contact@interiordesign.com">Email Us</a>
+    <p>Email: info@interiordesign.com</p>
+    <p>Phone: +1 234 567 8901</p>
+    <a href="mailto:info@interiordesign.com">Send an Email</a>
   </section>
 
+  <!-- Modal Popup Container -->
+  <div id="modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal-content">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <h3 id="modalTitle">More Images</h3>
+      <div class="modal-images" id="modalImages">
+        <!-- Images will be inserted here dynamically -->
+      </div>
+    </div>
+  </div>
+
   <script>
-    // Change navbar background on scroll
-    const nav = document.querySelector('nav');
-    const heroHeight = document.querySelector('.hero-slideshow').offsetHeight;
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > heroHeight - 80) { 
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    // Hero slideshow (simple fade)
-    let currentSlide = 0;
+    // Hero Slideshow logic
     const slides = document.querySelectorAll('.slide');
-    function nextSlide() {
+    let currentSlide = 0;
+    setInterval(() => {
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
+    }, 7000);
+
+    // Navbar background toggle on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > window.innerHeight - 80){
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Modal popup images data for each service
+    const serviceImages = {
+      'space-planning': [
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1494522371507-84a63e82e9a6?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1505692794403-2e5e4e03d466?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1536643712733-e3a98143d2ff?auto=format&fit=crop&w=400&q=80'
+      ],
+      'interior-design': [
+        'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1494522344207-9814e1e37dbd?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=400&q=80'
+      ],
+      'project-management': [
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1532074205216-d0e1f68b65ba?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80',
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80'
+      ]
+    };
+
+    const modal = document.getElementById('modal');
+    const modalImagesContainer = document.getElementById('modalImages');
+    const modalCloseBtn = modal.querySelector('.modal-close-btn');
+
+    // Open modal with images for the clicked service
+    function openModal(service) {
+      modalImagesContainer.innerHTML = '';
+      const images = serviceImages[service];
+      if (!images) return;
+
+      images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = service + ' detail image';
+        modalImagesContainer.appendChild(img);
+      });
+
+      modal.classList.add('active');
+      modal.focus();
     }
-    setInterval(nextSlide, 5000); // change slide every 5 seconds
+
+    // Close modal
+    function closeModal() {
+      modal.classList.remove('active');
+    }
+
+    // Event delegation for See More buttons
+    document.querySelectorAll('.see-more-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        const service = e.currentTarget.getAttribute('data-service');
+        openModal(service);
+      });
+    });
+
+    // Close modal on close button click
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    // Close modal on clicking outside modal-content
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', e => {
+      if(e.key === "Escape" && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
   </script>
-  <!-- ===========================
-     Modal JavaScript
-=========================== -->
-<script>
-  function openModal(id) {
-    document.getElementById(id).classList.remove('hidden');
-    document.getElementById(id).classList.add('flex');
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('flex');
-    document.getElementById(id).classList.add('hidden');
-  }
-</script>
-
 </body>
 </html>

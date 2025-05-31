@@ -16,6 +16,7 @@
       background: #fafafa;
       color: #333;
       line-height: 1.6;
+      scroll-behavior: smooth; /* for smooth scroll on anchor links */
     }
     a {
       color: #c17f3e;
@@ -23,6 +24,46 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Transparent fixed navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255 255 255 / 0); /* fully transparent */
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+      font-weight: 600;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+    nav.scrolled {
+      background: rgba(255 255 255 / 0.95); /* slight white background on scroll */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+    nav ul li {
+      cursor: pointer;
+    }
+    nav ul li a {
+      color: #c17f3e;
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #c17f3e;
+      color: white;
     }
 
     .container {
@@ -37,6 +78,7 @@
       position: relative;
       height: 100vh;
       overflow: hidden;
+      padding-top: 60px; /* so navbar doesn't overlap hero content */
     }
     .slide {
       position: absolute;
@@ -216,10 +258,23 @@
       .hero-content h1 {
         font-size: 2.5rem;
       }
+      nav ul {
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Transparent Navbar -->
+  <nav id="navbar">
+    <ul>
+      <li><a href="#aboutus">About Us</a></li>
+      <li><a href="#whatwedo">What We Do</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Slideshow -->
   <section class="hero-slideshow">
@@ -235,7 +290,7 @@
   </section>
 
   <!-- About Us -->
-  <section class="about-us container">
+  <section id="aboutus" class="about-us container">
     <h2>About Us</h2>
     <p>We are passionate about designing spaces that blend elegance, comfort, and functionality. Our expert team transforms ideas into reality with attention to every detail.</p>
     <div class="subsection">
@@ -253,7 +308,7 @@
   </section>
 
   <!-- What We Do -->
-  <section class="container">
+  <section id="whatwedo" class="container">
     <h2 class="section-title">What We Do</h2>
     <div class="what-we-do">
       <div class="service-card">
@@ -261,67 +316,62 @@
         <h3>Modular Kitchens</h3>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Bedrooms" />
-        <h3>Bedrooms</h3>
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Wardrobe Design" />
+        <h3>Wardrobe Design</h3>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1501183638714-3c8b0f2a54b7?auto=format&fit=crop&w=400&q=80" alt="Living Rooms" />
-        <h3>Living Rooms</h3>
-      </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="Dining Rooms" />
-        <h3>Dining Rooms</h3>
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Room Interiors" />
+        <h3>Room Interiors</h3>
       </div>
     </div>
   </section>
 
   <!-- Achievements -->
-  <section class="container">
+  <section id="achievements" class="container achievements">
     <h2 class="section-title">Achievements</h2>
     <div class="achievements">
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&q=80" alt="Award 1" />
-        <h3>Best Interior Design Award 2022</h3>
+        <img src="images/achievements/img1.jpg" alt="Award 1" />
+        <h3>Best Interior Design 2023</h3>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Award 2" />
-        <h3>Innovative Space Design 2023</h3>
+        <img src="images/achievements/img2.jpg" alt="Award 2" />
+        <h3>Top 10 Innovators</h3>
       </div>
       <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Award 3" />
-        <h3>Customer Choice Award 2024</h3>
+        <img src="images/achievements/img3.jpg" alt="Award 3" />
+        <h3>Customer Choice Award</h3>
       </div>
-    </div>
-  </section>
-
-  <!-- Clients -->
-  <section class="clients">
-    <div class="container">
-      <h2 class="section-title">Our Valued Clients</h2>
-      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Microsoft_logo_2012.svg/2560px-Microsoft_logo_2012.svg.png" alt="Microsoft" />
-      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.svg" alt="Google Flutter" />
-      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" />
-      <img class="client-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Intel_logo_2020.svg" alt="Intel" />
     </div>
   </section>
 
   <!-- Contact -->
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <p>Get in touch for a personalized consultation and bring your dream space to life.</p>
+    <p>Reach out to us to start your dream project today!</p>
     <a href="mailto:contact@interiordesign.com">Email Us</a>
   </section>
 
   <script>
-    const slides = document.querySelectorAll('.slide');
-    let index = 0;
+    // Change navbar background on scroll
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
 
-    setInterval(() => {
-      slides[index].classList.remove('active');
-      index = (index + 1) % slides.length;
-      slides[index].classList.add('active');
-    }, 5000); // change slide every 5 seconds
+    // Hero slideshow (simple fade)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    setInterval(nextSlide, 5000); // change slide every 5 seconds
   </script>
 
 </body>

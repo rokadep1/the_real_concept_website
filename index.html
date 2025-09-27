@@ -396,19 +396,40 @@ nav.scrolled ul li a:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-  background-color: #fefefe;
-  margin: 20px auto;          /* slightly smaller top/bottom margin */
+  background-color: #fff;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-  width: 95%;                 /* increased width */
-  max-width: 1200px;          /* bigger max width */
+  width: 95%;
+  max-width: 1200px;
   position: relative;
   text-align: center;
 }
+.modal-content .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.modal-images-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 
 
 .modal-images {
@@ -495,64 +516,46 @@ nav.scrolled ul li a:hover {
 
   <!-- What We Do -->
 <!-- What We Do -->
-<section id="whatwedo" class="container">
-  <h2 class="section-title">What We Do</h2>
-  <div class="what-we-do">
-
-    <div class="service-card">
-      <img src="images/kitchen/main.jpg" alt="Kitchen" />
-      <div class="card-footer">
-        <span class="category-name">Kitchen</span>
-        <div class="see-more-links">
-          <a href="images/kitchen/1.jpg" target="_blank">1</a>
-          <a href="images/kitchen/2.jpg" target="_blank">2</a>
-          <a href="images/kitchen/3.jpg" target="_blank">3</a>
-          <a href="images/kitchen/4.jpg" target="_blank">4</a>
+<!-- What We Do -->
+  <section id="whatwedo" class="container">
+    <h2 class="section-title">What We Do</h2>
+    <div class="what-we-do">
+  
+      <div class="service-card" data-category="kitchen">
+        <img src="images/kitchen/main.jpg" alt="Kitchen" />
+        <div class="card-footer">
+          <span class="category-name">Kitchen</span>
+          <button class="see-more-btn">See More</button>
         </div>
       </div>
-    </div>
-
-    <div class="service-card">
-      <img src="images/bedroom/main.jpg" alt="Bedroom" />
-      <div class="card-footer">
-        <span class="category-name">Bedroom</span>
-        <div class="see-more-links">
-          <a href="images/bedroom/1.jpg" target="_blank">1</a>
-          <a href="images/bedroom/2.jpg" target="_blank">2</a>
-          <a href="images/bedroom/3.jpg" target="_blank">3</a>
-          <a href="images/bedroom/4.jpg" target="_blank">4</a>
+  
+      <div class="service-card" data-category="bedroom">
+        <img src="images/bedroom/main.jpg" alt="Bedroom" />
+        <div class="card-footer">
+          <span class="category-name">Bedroom</span>
+          <button class="see-more-btn">See More</button>
         </div>
       </div>
-    </div>
-
-    <div class="service-card">
-      <img src="images/living/main.jpg" alt="Living" />
-      <div class="card-footer">
-        <span class="category-name">Living</span>
-        <div class="see-more-links">
-          <a href="images/living/1.jpg" target="_blank">1</a>
-          <a href="images/living/2.jpg" target="_blank">2</a>
-          <a href="images/living/3.jpg" target="_blank">3</a>
-          <a href="images/living/4.jpg" target="_blank">4</a>
+  
+      <div class="service-card" data-category="living">
+        <img src="images/living/main.jpg" alt="Living" />
+        <div class="card-footer">
+          <span class="category-name">Living</span>
+          <button class="see-more-btn">See More</button>
         </div>
       </div>
-    </div>
-
-    <div class="service-card">
-      <img src="images/exteriors/main.jpg" alt="Exteriors" />
-      <div class="card-footer">
-        <span class="category-name">Exteriors</span>
-        <div class="see-more-links">
-          <a href="images/exteriors/1.jpg" target="_blank">1</a>
-          <a href="images/exteriors/2.jpg" target="_blank">2</a>
-          <a href="images/exteriors/3.jpg" target="_blank">3</a>
-          <a href="images/exteriors/4.jpg" target="_blank">4</a>
+  
+      <div class="service-card" data-category="exteriors">
+        <img src="images/exteriors/main.jpg" alt="Exteriors" />
+        <div class="card-footer">
+          <span class="category-name">Exteriors</span>
+          <button class="see-more-btn">See More</button>
         </div>
       </div>
+  
     </div>
+  </section>
 
-  </div>
-</section>
 
 
   <!-- Achievements -->
@@ -659,6 +662,48 @@ nav.scrolled ul li a:hover {
     }
   };
 </script>
+<script>
+  const modal = document.getElementById('imageModal');
+  const modalImages = document.getElementById('modal-images');
+  const closeBtn = document.querySelector('.modal .close');
+
+  document.querySelectorAll('.see-more-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const category = this.parentElement.parentElement.getAttribute('data-category');
+      modalImages.innerHTML = '';
+
+      // add 4 images for the category
+      for (let i = 1; i <= 4; i++) {
+        const img = document.createElement('img');
+        img.src = `images/${category}/${i}.jpg`;
+        img.alt = `${category} ${i}`;
+        modalImages.appendChild(img);
+      }
+
+      modal.style.display = 'block';
+    });
+  });
+
+  // close modal
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+  };
+
+  // close modal if click outside
+  window.onclick = event => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  };
+</script>
+<!-- Modal for See More -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modal-images" class="modal-images-grid"></div>
+  </div>
+</div>
+
 
 
 </body>

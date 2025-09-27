@@ -396,9 +396,9 @@ nav.scrolled ul li a:hover {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8); /* dark semi-transparent background */
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
+  display: flex;                /* enable flex */
+  justify-content: center;      /* center horizontally */
+  align-items: center;          /* center vertically */
   overflow: auto;
 }
 
@@ -406,9 +406,11 @@ nav.scrolled ul li a:hover {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 80%;            /* 80% of viewport width */
-  max-width: 800px;      /* maximum width */
+  width: 80%;           /* 80% of viewport width */
+  max-width: 800px;     /* maximum width */
   text-align: center;
+  position: relative;   /* required for close button */
+  margin: 0;            /* remove any top/bottom margin */
 }
 
 .modal-content .close {
@@ -430,7 +432,7 @@ nav.scrolled ul li a:hover {
 
 .modal-images-grid img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* makes all images perfect squares */
+  aspect-ratio: 1 / 1;   /* make all images perfect squares */
   object-fit: cover;
   border-radius: 8px;
 }

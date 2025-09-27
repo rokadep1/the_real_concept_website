@@ -185,10 +185,11 @@ nav.scrolled ul li a:hover {
       grid-template-columns: repeat(2, 1fr); /* 2 columns */
       grid-template-rows: repeat(2, auto);   /* 2 rows */
       gap: 50px;
-      justify-items: center; /* center cards in each grid cell */
-      max-width: 800px; /* optional: limit container width for neatness */
-      margin: 0 auto; /* center container */
+      justify-items: center; /* center cards */
+      max-width: 900px;      /* optional for spacing */
+      margin: 0 auto;        /* center container */
     }
+
 
 /* Keep existing .service-card styles */
 
@@ -463,43 +464,31 @@ nav.scrolled ul li a:hover {
   <section id="whatwedo" class="container">
     <h2 class="section-title">What We Do</h2>
     <div class="what-we-do">
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Kitchen" />
-        <h3>Kitchen</h3>
-      </div>
       <div class="service-card" data-category="kitchen">
         <img src="images/kitchen/main.jpg" alt="Kitchen" />
         <h3>Kitchen</h3>
         <button class="see-more-btn">See More</button>
       </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Bedroom" />
-        <h3>Bedroom</h3>
-      </div>
+    
       <div class="service-card" data-category="bedroom">
         <img src="images/bedroom/main.jpg" alt="Bedroom" />
         <h3>Bedroom</h3>
         <button class="see-more-btn">See More</button>
       </div>
-      <div class="service-card">
-        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Living" />
-        <h3>Living</h3>
-      </div>
+    
       <div class="service-card" data-category="living">
         <img src="images/living/main.jpg" alt="Living" />
         <h3>Living</h3>
         <button class="see-more-btn">See More</button>
       </div>
-      <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Exteriors" />
-      <h3>Exteriors</h3>
-      </div>
+    
       <div class="service-card" data-category="exteriors">
         <img src="images/exteriors/main.jpg" alt="Exteriors" />
         <h3>Exteriors</h3>
         <button class="see-more-btn">See More</button>
       </div>
     </div>
+
   </section>
 
   <!-- Achievements -->

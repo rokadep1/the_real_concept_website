@@ -628,81 +628,48 @@ nav.scrolled ul li a:hover {
 <div id="imageModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <div id="modal-images" class="modal-images"></div>
-  </div>
-</div>
-  <script>
-  const modal = document.getElementById('imageModal');
-  const modalImages = document.getElementById('modal-images');
-  const closeBtn = document.querySelector('.modal .close');
-
-  document.querySelectorAll('.see-more-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const category = this.parentElement.getAttribute('data-category');
-      modalImages.innerHTML = '';
-
-      for (let i = 1; i <= 4; i++) {
-        const img = document.createElement('img');
-        img.src = `images/${category}/${i}.jpg`; // image names: 1.jpg, 2.jpg, ...
-        img.alt = `${category} ${i}`;
-        modalImages.appendChild(img);
-      }
-
-      modal.style.display = 'block';
-    });
-  });
-
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-  };
-
-  window.onclick = event => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  };
-</script>
-<script>
-  const modal = document.getElementById('imageModal');
-  const modalImages = document.getElementById('modal-images');
-  const closeBtn = document.querySelector('.modal .close');
-
-  document.querySelectorAll('.see-more-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const category = this.parentElement.parentElement.getAttribute('data-category');
-      modalImages.innerHTML = '';
-
-      // add 4 images for the category
-      for (let i = 1; i <= 4; i++) {
-        const img = document.createElement('img');
-        img.src = `images/${category}/${i}.jpg`;
-        img.alt = `${category} ${i}`;
-        modalImages.appendChild(img);
-      }
-
-      modal.style.display = 'block';
-    });
-  });
-
-  // close modal
-  closeBtn.onclick = () => {
-    modal.style.display = 'none';
-  };
-
-  // close modal if click outside
-  window.onclick = event => {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  };
-</script>
-<!-- Modal for See More -->
-<div id="imageModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
     <div id="modal-images" class="modal-images-grid"></div>
   </div>
 </div>
+<script>
+const modal = document.getElementById('imageModal');
+const modalImages = document.getElementById('modal-images');
+const closeBtn = document.querySelector('.modal .close');
+
+document.querySelectorAll('.see-more-btn').forEach(button => {
+  button.addEventListener('click', function () {
+    const category = this.closest('.service-card').getAttribute('data-category');
+    modalImages.innerHTML = ''; // clear previous images
+
+    // Add 4 images for the category
+    for (let i = 1; i <= 4; i++) {
+      const img = document.createElement('img');
+      img.src = `images/${category}/${i}.jpg`; // make sure your folder/files match
+      img.alt = `${category} ${i}`;
+      img.style.width = '48%'; // for 2x2 grid
+      img.style.margin = '1%';
+      modalImages.appendChild(img);
+    }
+
+    modal.style.display = 'block';
+  });
+});
+
+// Close modal on clicking X
+closeBtn.onclick = () => {
+  modal.style.display = 'none';
+};
+
+// Close modal if clicking outside
+window.onclick = event => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
+</script>
+
+
+
 
 
 

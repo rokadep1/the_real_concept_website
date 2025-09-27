@@ -197,14 +197,10 @@ nav.scrolled ul li a:hover {
     .service-card {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start; /* keep content aligned top */
-      background: white;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: transparent; /* keep background transparent for images */
+      text-align: center;
       border-radius: 10px;
       overflow: hidden;
-      width: 100%;      /* fills column */
-      height: 350px;    /* fixed height for uniformity */
-      text-align: center;
       transition: transform 0.3s ease;
     }
     .service-card:hover {
@@ -212,8 +208,37 @@ nav.scrolled ul li a:hover {
     }
     .service-card img {
       width: 100%;
-      height: 200px;       /* uniform image height */
-      object-fit: cover;   /* crops image nicely */
+      height: 250px; /* adjust image height */
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .card-footer {
+    background-color: #000; /* black footer below image */
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    }
+    .category-name {
+      color: #fff;
+      font-size: 1.1rem; /* slightly smaller */
+      font-weight: 600;
+    }
+    
+    .see-more-btn {
+      padding: 5px 12px;
+      font-size: 0.9rem; /* smaller button text */
+      background-color: #c17f3e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .see-more-btn:hover {
+      background-color: #a2672b;
     }
     .service-card h3 {
       padding: 15px;
@@ -474,27 +499,34 @@ nav.scrolled ul li a:hover {
     <div class="what-we-do">
       <div class="service-card" data-category="kitchen">
         <img src="images/kitchen/main.jpg" alt="Kitchen" />
-        <h3>Kitchen</h3>
-        <button class="see-more-btn">See More</button>
+        <div class="card-footer">
+          <span class="category-name">kitchen</span>
+          <button class="see-more-btn">See More</button>
+        </div>
       </div>
     
       <div class="service-card" data-category="bedroom">
         <img src="images/bedroom/main.jpg" alt="Bedroom" />
-        <h3>Bedroom</h3>
-        <button class="see-more-btn">See More</button>
+        <div class="card-footer">
+          <span class="category-name">bedroom</span>
+          <button class="see-more-btn">See More</button>
+        </div>
       </div>
     
       <div class="service-card" data-category="living">
         <img src="images/living/main.jpg" alt="Living" />
-        <h3>Living</h3>
-        <button class="see-more-btn">See More</button>
+        <div class="card-footer">
+          <span class="category-name">living</span>
+          <button class="see-more-btn">See More</button>
+        </div>
       </div>
     
       <div class="service-card" data-category="exteriors">
         <img src="images/exteriors/main.jpg" alt="Exteriors" />
-        <h3>Exteriors</h3>
-        <button class="see-more-btn">See More</button>
-      </div>
+        <div class="card-footer">
+          <span class="category-name">exteriors</span>
+          <button class="see-more-btn">See More</button>
+        </div>
     </div>
 
   </section>

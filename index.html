@@ -383,18 +383,21 @@ nav.scrolled ul li a:hover {
 
 
 .modal-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  display: grid; /* use grid instead of flex */
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, auto);  /* 2 rows */
+  gap: 20px; /* spacing between images */
+  justify-items: center;
+  align-items: center;
 }
 
 .modal-images img {
-  max-width: 45%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 
 .close {
   position: absolute;
